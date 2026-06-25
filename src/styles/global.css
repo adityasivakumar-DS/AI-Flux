@@ -1,0 +1,983 @@
+/* ============================================================
+   AI-Flux Design System — Global Stylesheet
+   Brand: Intelligent · Precise · Futuristic
+   ============================================================
+   Table of Contents
+   1. CSS Reset / Normalize
+   2. Primitive Color Tokens
+   3. Semantic Tokens — Light Mode (:root)
+   4. Semantic Tokens — Dark Mode
+   5. Spacing Tokens
+   6. Border-Radius Tokens
+   7. Typography Scale Tokens
+   8. Shadow & Motion Tokens
+   9. Base Typography Styles
+   ============================================================ */
+
+
+/* ============================================================
+   1. CSS Reset / Normalize
+   ============================================================ */
+
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins and paddings */
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, figure,
+dl, dd, dt,
+ul, ol, li,
+fieldset, legend,
+pre, address {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  tab-size: 4;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Remove list styles on ul/ol with a list role (resets from browsers that apply it) */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set default heading behavior */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Media defaults */
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove built-in form typography styles */
+input,
+button,
+textarea,
+select,
+optgroup {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Table normalization */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Anchor defaults */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Button defaults */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Fieldset / legend normalization */
+fieldset {
+  border: none;
+}
+
+/* Hidden attribute support */
+[hidden] {
+  display: none !important;
+}
+
+/* Prevent iOS Safari tap highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Reduced motion — honour system preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ============================================================
+   2. Primitive Color Tokens
+   ============================================================ */
+
+:root {
+  /* ── Blue ───────────────────────────────────────────────── */
+  --ai-flux-blue-50:  #edfaff;
+  --ai-flux-blue-100: #d6f3ff;
+  --ai-flux-blue-200: #b5ebff;
+  --ai-flux-blue-300: #83dfff;
+  --ai-flux-blue-400: #48caff;
+  --ai-flux-blue-500: #1eaeff;
+  --ai-flux-blue-600: #068fff;
+  --ai-flux-blue-700: #0077eb;
+  --ai-flux-blue-800: #0860be;
+  --ai-flux-blue-900: #0d5295;
+  --ai-flux-blue-950: #0e3259;
+
+  /* ── Cyan ───────────────────────────────────────────────── */
+  --ai-flux-cyan-50:  #ecfeff;
+  --ai-flux-cyan-100: #cffafe;
+  --ai-flux-cyan-200: #a5f3fc;
+  --ai-flux-cyan-300: #67e8f9;
+  --ai-flux-cyan-400: #22d3ee;
+  --ai-flux-cyan-500: #06b6d4;
+  --ai-flux-cyan-600: #0891b2;
+  --ai-flux-cyan-700: #0e7490;
+  --ai-flux-cyan-800: #155e75;
+  --ai-flux-cyan-900: #164e63;
+  --ai-flux-cyan-950: #083344;
+
+  /* ── Electric ───────────────────────────────────────────── */
+  --ai-flux-electric-50:  #f0f9ff;
+  --ai-flux-electric-100: #bfefff;
+  --ai-flux-electric-200: #7fdfff;
+  --ai-flux-electric-300: #3fcfff;
+  --ai-flux-electric-400: #00bfff;
+  --ai-flux-electric-500: #00aaee;
+  --ai-flux-electric-600: #0090cc;
+  --ai-flux-electric-700: #0077aa;
+  --ai-flux-electric-800: #005e88;
+  --ai-flux-electric-900: #004466;
+  --ai-flux-electric-950: #002233;
+
+  /* ── Violet ─────────────────────────────────────────────── */
+  --ai-flux-violet-50:  #f5f3ff;
+  --ai-flux-violet-100: #ede9fe;
+  --ai-flux-violet-200: #ddd6fe;
+  --ai-flux-violet-300: #c4b5fd;
+  --ai-flux-violet-400: #a78bfa;
+  --ai-flux-violet-500: #8b5cf6;
+  --ai-flux-violet-600: #7c3aed;
+  --ai-flux-violet-700: #6d28d9;
+  --ai-flux-violet-800: #5b21b6;
+  --ai-flux-violet-900: #4c1d95;
+  --ai-flux-violet-950: #2e1065;
+
+  /* ── Indigo ─────────────────────────────────────────────── */
+  --ai-flux-indigo-50:  #eef2ff;
+  --ai-flux-indigo-100: #e0e7ff;
+  --ai-flux-indigo-200: #c7d2fe;
+  --ai-flux-indigo-300: #a5b4fc;
+  --ai-flux-indigo-400: #818cf8;
+  --ai-flux-indigo-500: #6366f1;
+  --ai-flux-indigo-600: #4f46e5;
+  --ai-flux-indigo-700: #4338ca;
+  --ai-flux-indigo-800: #3730a3;
+  --ai-flux-indigo-900: #312e81;
+  --ai-flux-indigo-950: #1e1b4b;
+
+  /* ── Slate ──────────────────────────────────────────────── */
+  --ai-flux-slate-0:   #ffffff;
+  --ai-flux-slate-50:  #f8fafc;
+  --ai-flux-slate-100: #f1f5f9;
+  --ai-flux-slate-150: #e8edf3;
+  --ai-flux-slate-200: #e2e8f0;
+  --ai-flux-slate-250: #d5dce8;
+  --ai-flux-slate-300: #cbd5e1;
+  --ai-flux-slate-400: #94a3b8;
+  --ai-flux-slate-500: #64748b;
+  --ai-flux-slate-600: #475569;
+  --ai-flux-slate-650: #3a4556;
+  --ai-flux-slate-700: #334155;
+  --ai-flux-slate-750: #293548;
+  --ai-flux-slate-800: #1e293b;
+  --ai-flux-slate-850: #172032;
+  --ai-flux-slate-900: #0f172a;
+  --ai-flux-slate-950: #0a0f1e;
+}
+
+
+/* ============================================================
+   3. Semantic Tokens — Light Mode (:root)
+   ============================================================ */
+
+:root {
+  /* ── Background ─────────────────────────────────────────── */
+  --ai-flux-background-base:   #f8fafc;
+  --ai-flux-background-subtle: #f1f5f9;
+  --ai-flux-background-muted:  #e2e8f0;
+
+  /* ── Surface ────────────────────────────────────────────── */
+  --ai-flux-surface-default: #ffffff;
+  --ai-flux-surface-raised:  #f8fafc;
+  --ai-flux-surface-overlay: #f1f5f9;
+  --ai-flux-surface-sunken:  #e8edf3;
+
+  /* ── Border ─────────────────────────────────────────────── */
+  --ai-flux-border-default: #cbd5e1;
+  --ai-flux-border-strong:  #94a3b8;
+  --ai-flux-border-subtle:  #e2e8f0;
+  --ai-flux-border-accent:  #06b6d4;
+
+  /* ── Text ───────────────────────────────────────────────── */
+  --ai-flux-text-primary:    #0f172a;
+  --ai-flux-text-secondary:  #334155;
+  --ai-flux-text-tertiary:   #64748b;
+  --ai-flux-text-disabled:   #94a3b8;
+  --ai-flux-text-inverse:    #ffffff;
+  --ai-flux-text-accent:     #0077aa;
+  --ai-flux-text-link:       #068fff;
+  --ai-flux-text-link-hover: #0060cc;
+
+  /* ── Interactive — Primary ──────────────────────────────── */
+  --ai-flux-interactive-primary-bg:        #00bfff;
+  --ai-flux-interactive-primary-bg-hover:  #00aaee;
+  --ai-flux-interactive-primary-bg-active: #0090cc;
+  --ai-flux-interactive-primary-text:      #ffffff;
+
+  /* ── Interactive — Secondary ────────────────────────────── */
+  --ai-flux-interactive-secondary-bg:       #eef2ff;
+  --ai-flux-interactive-secondary-bg-hover: #e0e7ff;
+  --ai-flux-interactive-secondary-text:     #4338ca;
+
+  /* ── Interactive — Ghost ────────────────────────────────── */
+  --ai-flux-interactive-ghost-bg-hover: #f0f9ff;
+  --ai-flux-interactive-ghost-text:     #0077aa;
+
+  /* ── Focus ──────────────────────────────────────────────── */
+  --ai-flux-focus-ring: #00bfff;
+
+  /* ── Status — Success ───────────────────────────────────── */
+  --ai-flux-success-bg:     #f0fdf4;
+  --ai-flux-success-border: #86efac;
+  --ai-flux-success-text:   #15803d;
+  --ai-flux-success-icon:   #22c55e;
+
+  /* ── Status — Warning ───────────────────────────────────── */
+  --ai-flux-warning-bg:     #fffbeb;
+  --ai-flux-warning-border: #fcd34d;
+  --ai-flux-warning-text:   #b45309;
+  --ai-flux-warning-icon:   #f59e0b;
+
+  /* ── Status — Error / Danger ────────────────────────────── */
+  --ai-flux-error-bg:     #fef2f2;
+  --ai-flux-error-border: #fca5a5;
+  --ai-flux-error-text:   #b91c1c;
+  --ai-flux-error-icon:   #ef4444;
+
+  /* ── Status — Info ──────────────────────────────────────── */
+  --ai-flux-info-bg:     #eff6ff;
+  --ai-flux-info-border: #93c5fd;
+  --ai-flux-info-text:   #1d4ed8;
+  --ai-flux-info-icon:   #3b82f6;
+
+  /* ── Brand Accent (Electric/AI) ─────────────────────────── */
+  --ai-flux-accent-primary:      #00bfff;
+  --ai-flux-accent-primary-dark: #0090cc;
+  --ai-flux-accent-glow:         rgba(0, 191, 255, 0.15);
+  --ai-flux-accent-dim:          rgba(0, 191, 255, 0.08);
+
+  /* ── Shadow ─────────────────────────────────────────────── */
+  --ai-flux-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --ai-flux-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --ai-flux-shadow-md: 0 4px 6px rgba(15, 23, 42, 0.07), 0 2px 4px rgba(15, 23, 42, 0.05);
+  --ai-flux-shadow-lg: 0 10px 15px rgba(15, 23, 42, 0.08), 0 4px 6px rgba(15, 23, 42, 0.04);
+  --ai-flux-shadow-xl: 0 20px 25px rgba(15, 23, 42, 0.10), 0 8px 10px rgba(15, 23, 42, 0.04);
+  --ai-flux-shadow-glow: 0 0 0 1px var(--ai-flux-border-accent), 0 4px 20px var(--ai-flux-accent-glow);
+
+  /* ── Motion ─────────────────────────────────────────────── */
+  --ai-flux-transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ai-flux-transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ai-flux-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ai-flux-transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Z-Index Scale ──────────────────────────────────────── */
+  --ai-flux-z-base:    0;
+  --ai-flux-z-raised:  10;
+  --ai-flux-z-dropdown: 100;
+  --ai-flux-z-sticky:  200;
+  --ai-flux-z-overlay: 300;
+  --ai-flux-z-modal:   400;
+  --ai-flux-z-toast:   500;
+  --ai-flux-z-tooltip: 600;
+}
+
+
+/* ============================================================
+   4. Semantic Tokens — Dark Mode
+   Applied via [data-theme="dark"] attribute OR system preference.
+   The attribute selector takes precedence over media query so
+   users can manually toggle themes regardless of system setting.
+   ============================================================ */
+
+[data-theme="dark"],
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* ── Background ─────────────────────────────────────────── */
+    --ai-flux-background-base:   #0a0f1e;
+    --ai-flux-background-subtle: #0f172a;
+    --ai-flux-background-muted:  #172032;
+
+    /* ── Surface ────────────────────────────────────────────── */
+    --ai-flux-surface-default: #141720;
+    --ai-flux-surface-raised:  #1a1e2a;
+    --ai-flux-surface-overlay: #1f2437;
+    --ai-flux-surface-sunken:  #0a0f1e;
+
+    /* ── Border ─────────────────────────────────────────────── */
+    --ai-flux-border-default: rgba(255, 255, 255, 0.10);
+    --ai-flux-border-strong:  rgba(255, 255, 255, 0.20);
+    --ai-flux-border-subtle:  rgba(255, 255, 255, 0.06);
+    --ai-flux-border-accent:  rgba(0, 191, 255, 0.50);
+
+    /* ── Text ───────────────────────────────────────────────── */
+    --ai-flux-text-primary:    rgba(255, 255, 255, 0.92);
+    --ai-flux-text-secondary:  rgba(255, 255, 255, 0.68);
+    --ai-flux-text-tertiary:   rgba(255, 255, 255, 0.44);
+    --ai-flux-text-disabled:   rgba(255, 255, 255, 0.24);
+    --ai-flux-text-inverse:    #0f172a;
+    --ai-flux-text-accent:     #48caff;
+    --ai-flux-text-link:       #48caff;
+    --ai-flux-text-link-hover: #83dfff;
+
+    /* ── Interactive — Primary ──────────────────────────────── */
+    --ai-flux-interactive-primary-bg:        #00bfff;
+    --ai-flux-interactive-primary-bg-hover:  #1eaeff;
+    --ai-flux-interactive-primary-bg-active: #068fff;
+    --ai-flux-interactive-primary-text:      #0a0f1e;
+
+    /* ── Interactive — Secondary ────────────────────────────── */
+    --ai-flux-interactive-secondary-bg:       rgba(99, 102, 241, 0.15);
+    --ai-flux-interactive-secondary-bg-hover: rgba(99, 102, 241, 0.25);
+    --ai-flux-interactive-secondary-text:     #a5b4fc;
+
+    /* ── Interactive — Ghost ────────────────────────────────── */
+    --ai-flux-interactive-ghost-bg-hover: rgba(0, 191, 255, 0.08);
+    --ai-flux-interactive-ghost-text:     #48caff;
+
+    /* ── Focus ──────────────────────────────────────────────── */
+    --ai-flux-focus-ring: #00bfff;
+
+    /* ── Status — Success ───────────────────────────────────── */
+    --ai-flux-success-bg:     rgba(21, 128, 61, 0.12);
+    --ai-flux-success-border: rgba(34, 197, 94, 0.30);
+    --ai-flux-success-text:   #4ade80;
+    --ai-flux-success-icon:   #22c55e;
+
+    /* ── Status — Warning ───────────────────────────────────── */
+    --ai-flux-warning-bg:     rgba(180, 83, 9, 0.12);
+    --ai-flux-warning-border: rgba(245, 158, 11, 0.30);
+    --ai-flux-warning-text:   #fbbf24;
+    --ai-flux-warning-icon:   #f59e0b;
+
+    /* ── Status — Error / Danger ────────────────────────────── */
+    --ai-flux-error-bg:     rgba(185, 28, 28, 0.12);
+    --ai-flux-error-border: rgba(239, 68, 68, 0.30);
+    --ai-flux-error-text:   #f87171;
+    --ai-flux-error-icon:   #ef4444;
+
+    /* ── Status — Info ──────────────────────────────────────── */
+    --ai-flux-info-bg:     rgba(29, 78, 216, 0.12);
+    --ai-flux-info-border: rgba(59, 130, 246, 0.30);
+    --ai-flux-info-text:   #93c5fd;
+    --ai-flux-info-icon:   #3b82f6;
+
+    /* ── Brand Accent ───────────────────────────────────────── */
+    --ai-flux-accent-primary:      #00bfff;
+    --ai-flux-accent-primary-dark: #1eaeff;
+    --ai-flux-accent-glow:         rgba(0, 191, 255, 0.20);
+    --ai-flux-accent-dim:          rgba(0, 191, 255, 0.10);
+
+    /* ── Shadow (deeper in dark mode) ──────────────────────── */
+    --ai-flux-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.40);
+    --ai-flux-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.50), 0 1px 2px rgba(0, 0, 0, 0.30);
+    --ai-flux-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.60), 0 2px 4px rgba(0, 0, 0, 0.40);
+    --ai-flux-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.70), 0 4px 8px rgba(0, 0, 0, 0.50);
+    --ai-flux-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.80), 0 8px 16px rgba(0, 0, 0, 0.60);
+    --ai-flux-shadow-glow: 0 0 0 1px var(--ai-flux-border-accent), 0 4px 24px var(--ai-flux-accent-glow);
+  }
+}
+
+/* Explicit dark-mode attribute — highest specificity for manual toggle */
+[data-theme="dark"] {
+  /* ── Background ─────────────────────────────────────────── */
+  --ai-flux-background-base:   #0a0f1e;
+  --ai-flux-background-subtle: #0f172a;
+  --ai-flux-background-muted:  #172032;
+
+  /* ── Surface ────────────────────────────────────────────── */
+  --ai-flux-surface-default: #141720;
+  --ai-flux-surface-raised:  #1a1e2a;
+  --ai-flux-surface-overlay: #1f2437;
+  --ai-flux-surface-sunken:  #0a0f1e;
+
+  /* ── Border ─────────────────────────────────────────────── */
+  --ai-flux-border-default: rgba(255, 255, 255, 0.10);
+  --ai-flux-border-strong:  rgba(255, 255, 255, 0.20);
+  --ai-flux-border-subtle:  rgba(255, 255, 255, 0.06);
+  --ai-flux-border-accent:  rgba(0, 191, 255, 0.50);
+
+  /* ── Text ───────────────────────────────────────────────── */
+  --ai-flux-text-primary:    rgba(255, 255, 255, 0.92);
+  --ai-flux-text-secondary:  rgba(255, 255, 255, 0.68);
+  --ai-flux-text-tertiary:   rgba(255, 255, 255, 0.44);
+  --ai-flux-text-disabled:   rgba(255, 255, 255, 0.24);
+  --ai-flux-text-inverse:    #0f172a;
+  --ai-flux-text-accent:     #48caff;
+  --ai-flux-text-link:       #48caff;
+  --ai-flux-text-link-hover: #83dfff;
+
+  /* ── Interactive — Primary ──────────────────────────────── */
+  --ai-flux-interactive-primary-bg:        #00bfff;
+  --ai-flux-interactive-primary-bg-hover:  #1eaeff;
+  --ai-flux-interactive-primary-bg-active: #068fff;
+  --ai-flux-interactive-primary-text:      #0a0f1e;
+
+  /* ── Interactive — Secondary ────────────────────────────── */
+  --ai-flux-interactive-secondary-bg:       rgba(99, 102, 241, 0.15);
+  --ai-flux-interactive-secondary-bg-hover: rgba(99, 102, 241, 0.25);
+  --ai-flux-interactive-secondary-text:     #a5b4fc;
+
+  /* ── Interactive — Ghost ────────────────────────────────── */
+  --ai-flux-interactive-ghost-bg-hover: rgba(0, 191, 255, 0.08);
+  --ai-flux-interactive-ghost-text:     #48caff;
+
+  /* ── Focus ──────────────────────────────────────────────── */
+  --ai-flux-focus-ring: #00bfff;
+
+  /* ── Status — Success ───────────────────────────────────── */
+  --ai-flux-success-bg:     rgba(21, 128, 61, 0.12);
+  --ai-flux-success-border: rgba(34, 197, 94, 0.30);
+  --ai-flux-success-text:   #4ade80;
+  --ai-flux-success-icon:   #22c55e;
+
+  /* ── Status — Warning ───────────────────────────────────── */
+  --ai-flux-warning-bg:     rgba(180, 83, 9, 0.12);
+  --ai-flux-warning-border: rgba(245, 158, 11, 0.30);
+  --ai-flux-warning-text:   #fbbf24;
+  --ai-flux-warning-icon:   #f59e0b;
+
+  /* ── Status — Error / Danger ────────────────────────────── */
+  --ai-flux-error-bg:     rgba(185, 28, 28, 0.12);
+  --ai-flux-error-border: rgba(239, 68, 68, 0.30);
+  --ai-flux-error-text:   #f87171;
+  --ai-flux-error-icon:   #ef4444;
+
+  /* ── Status — Info ──────────────────────────────────────── */
+  --ai-flux-info-bg:     rgba(29, 78, 216, 0.12);
+  --ai-flux-info-border: rgba(59, 130, 246, 0.30);
+  --ai-flux-info-text:   #93c5fd;
+  --ai-flux-info-icon:   #3b82f6;
+
+  /* ── Brand Accent ───────────────────────────────────────── */
+  --ai-flux-accent-primary:      #00bfff;
+  --ai-flux-accent-primary-dark: #1eaeff;
+  --ai-flux-accent-glow:         rgba(0, 191, 255, 0.20);
+  --ai-flux-accent-dim:          rgba(0, 191, 255, 0.10);
+
+  /* ── Shadow ─────────────────────────────────────────────── */
+  --ai-flux-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.40);
+  --ai-flux-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.50), 0 1px 2px rgba(0, 0, 0, 0.30);
+  --ai-flux-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.60), 0 2px 4px rgba(0, 0, 0, 0.40);
+  --ai-flux-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.70), 0 4px 8px rgba(0, 0, 0, 0.50);
+  --ai-flux-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.80), 0 8px 16px rgba(0, 0, 0, 0.60);
+  --ai-flux-shadow-glow: 0 0 0 1px var(--ai-flux-border-accent), 0 4px 24px var(--ai-flux-accent-glow);
+}
+
+
+/* ============================================================
+   5. Spacing Tokens
+   ============================================================ */
+
+:root {
+  --ai-flux-space-0:  0px;
+  --ai-flux-space-1:  4px;
+  --ai-flux-space-2:  8px;
+  --ai-flux-space-3:  12px;
+  --ai-flux-space-4:  16px;
+  --ai-flux-space-5:  20px;
+  --ai-flux-space-6:  24px;
+  --ai-flux-space-7:  28px;
+  --ai-flux-space-8:  32px;
+  --ai-flux-space-10: 40px;
+  --ai-flux-space-12: 48px;
+  --ai-flux-space-14: 56px;
+  --ai-flux-space-16: 64px;
+  --ai-flux-space-20: 80px;
+  --ai-flux-space-24: 96px;
+  --ai-flux-space-28: 112px;
+  --ai-flux-space-32: 128px;
+  --ai-flux-space-40: 160px;
+  --ai-flux-space-48: 192px;
+  --ai-flux-space-56: 224px;
+  --ai-flux-space-64: 256px;
+  --ai-flux-space-80: 320px;
+  --ai-flux-space-96: 384px;
+}
+
+
+/* ============================================================
+   6. Border-Radius Tokens
+   ============================================================ */
+
+:root {
+  --ai-flux-radius-none: 0px;
+  --ai-flux-radius-xs:   2px;
+  --ai-flux-radius-sm:   4px;
+  --ai-flux-radius-md:   6px;
+  --ai-flux-radius-lg:   8px;
+  --ai-flux-radius-xl:   12px;
+  --ai-flux-radius-2xl:  16px;
+  --ai-flux-radius-3xl:  24px;
+  --ai-flux-radius-full: 9999px;
+}
+
+
+/* ============================================================
+   7. Typography Scale Tokens
+   ============================================================ */
+
+:root {
+  /* Font families */
+  --ai-flux-font-sans: "Inter", "Helvetica Neue", Arial, system-ui, -apple-system, sans-serif;
+  --ai-flux-font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", "Courier New", monospace;
+  --ai-flux-font-display: "Inter", var(--ai-flux-font-sans);
+
+  /* Font sizes */
+  --ai-flux-text-xs:   0.6875rem;  /* 11px */
+  --ai-flux-text-sm:   0.8125rem;  /* 13px */
+  --ai-flux-text-base: 0.9375rem;  /* 15px */
+  --ai-flux-text-md:   1rem;       /* 16px */
+  --ai-flux-text-lg:   1.125rem;   /* 18px */
+  --ai-flux-text-xl:   1.25rem;    /* 20px */
+  --ai-flux-text-2xl:  1.5rem;     /* 24px */
+  --ai-flux-text-3xl:  1.875rem;   /* 30px */
+  --ai-flux-text-4xl:  2.25rem;    /* 36px */
+  --ai-flux-text-5xl:  3rem;       /* 48px */
+  --ai-flux-text-6xl:  3.75rem;    /* 60px */
+  --ai-flux-text-7xl:  4.5rem;     /* 72px */
+  --ai-flux-text-8xl:  6rem;       /* 96px */
+  --ai-flux-text-9xl:  8rem;       /* 128px */
+
+  /* Font weights */
+  --ai-flux-font-weight-thin:       100;
+  --ai-flux-font-weight-extralight: 200;
+  --ai-flux-font-weight-light:      300;
+  --ai-flux-font-weight-regular:    400;
+  --ai-flux-font-weight-medium:     500;
+  --ai-flux-font-weight-semibold:   600;
+  --ai-flux-font-weight-bold:       700;
+  --ai-flux-font-weight-extrabold:  800;
+  --ai-flux-font-weight-black:      900;
+
+  /* Line heights */
+  --ai-flux-leading-none:    1;
+  --ai-flux-leading-tight:   1.25;
+  --ai-flux-leading-snug:    1.375;
+  --ai-flux-leading-normal:  1.5;
+  --ai-flux-leading-relaxed: 1.625;
+  --ai-flux-leading-loose:   2;
+
+  /* Letter spacing */
+  --ai-flux-tracking-tighter: -0.05em;
+  --ai-flux-tracking-tight:   -0.025em;
+  --ai-flux-tracking-normal:   0em;
+  --ai-flux-tracking-wide:     0.025em;
+  --ai-flux-tracking-wider:    0.05em;
+  --ai-flux-tracking-widest:   0.1em;
+}
+
+
+/* ============================================================
+   8. Base Typography Styles
+   ============================================================ */
+
+html {
+  font-size: 16px; /* establishes the rem base */
+}
+
+body {
+  font-family: var(--ai-flux-font-sans);
+  font-size: var(--ai-flux-text-base);
+  font-weight: var(--ai-flux-font-weight-regular);
+  line-height: var(--ai-flux-leading-normal);
+  letter-spacing: var(--ai-flux-tracking-normal);
+  color: var(--ai-flux-text-primary);
+  background-color: var(--ai-flux-background-base);
+}
+
+/* ── Headings ─────────────────────────────────────────────── */
+
+h1, .ai-flux-h1 {
+  font-size: var(--ai-flux-text-4xl);
+  font-weight: var(--ai-flux-font-weight-bold);
+  line-height: var(--ai-flux-leading-tight);
+  letter-spacing: var(--ai-flux-tracking-tight);
+  color: var(--ai-flux-text-primary);
+}
+
+h2, .ai-flux-h2 {
+  font-size: var(--ai-flux-text-3xl);
+  font-weight: var(--ai-flux-font-weight-semibold);
+  line-height: var(--ai-flux-leading-tight);
+  letter-spacing: var(--ai-flux-tracking-tight);
+  color: var(--ai-flux-text-primary);
+}
+
+h3, .ai-flux-h3 {
+  font-size: var(--ai-flux-text-2xl);
+  font-weight: var(--ai-flux-font-weight-semibold);
+  line-height: var(--ai-flux-leading-snug);
+  letter-spacing: var(--ai-flux-tracking-tight);
+  color: var(--ai-flux-text-primary);
+}
+
+h4, .ai-flux-h4 {
+  font-size: var(--ai-flux-text-xl);
+  font-weight: var(--ai-flux-font-weight-semibold);
+  line-height: var(--ai-flux-leading-snug);
+  letter-spacing: var(--ai-flux-tracking-normal);
+  color: var(--ai-flux-text-primary);
+}
+
+h5, .ai-flux-h5 {
+  font-size: var(--ai-flux-text-lg);
+  font-weight: var(--ai-flux-font-weight-medium);
+  line-height: var(--ai-flux-leading-snug);
+  letter-spacing: var(--ai-flux-tracking-normal);
+  color: var(--ai-flux-text-primary);
+}
+
+h6, .ai-flux-h6 {
+  font-size: var(--ai-flux-text-md);
+  font-weight: var(--ai-flux-font-weight-medium);
+  line-height: var(--ai-flux-leading-normal);
+  letter-spacing: var(--ai-flux-tracking-wide);
+  color: var(--ai-flux-text-secondary);
+  text-transform: uppercase;
+}
+
+/* ── Body Copy ────────────────────────────────────────────── */
+
+p {
+  font-size: var(--ai-flux-text-base);
+  line-height: var(--ai-flux-leading-relaxed);
+  color: var(--ai-flux-text-secondary);
+  max-width: 72ch;
+}
+
+p + p {
+  margin-top: var(--ai-flux-space-4);
+}
+
+/* ── Lead Paragraph ───────────────────────────────────────── */
+
+.ai-flux-lead {
+  font-size: var(--ai-flux-text-lg);
+  line-height: var(--ai-flux-leading-relaxed);
+  color: var(--ai-flux-text-secondary);
+  font-weight: var(--ai-flux-font-weight-regular);
+}
+
+/* ── Small / Caption ──────────────────────────────────────── */
+
+small,
+.ai-flux-text-small {
+  font-size: var(--ai-flux-text-sm);
+  line-height: var(--ai-flux-leading-normal);
+  color: var(--ai-flux-text-tertiary);
+}
+
+.ai-flux-caption {
+  font-size: var(--ai-flux-text-xs);
+  line-height: var(--ai-flux-leading-normal);
+  letter-spacing: var(--ai-flux-tracking-wide);
+  color: var(--ai-flux-text-tertiary);
+}
+
+/* ── Inline Text Decorations ──────────────────────────────── */
+
+strong, b {
+  font-weight: var(--ai-flux-font-weight-semibold);
+  color: var(--ai-flux-text-primary);
+}
+
+em, i {
+  font-style: italic;
+}
+
+u {
+  text-decoration-color: var(--ai-flux-border-accent);
+  text-underline-offset: 3px;
+}
+
+del, s {
+  color: var(--ai-flux-text-disabled);
+}
+
+mark {
+  background-color: rgba(0, 191, 255, 0.15);
+  color: var(--ai-flux-text-primary);
+  border-radius: var(--ai-flux-radius-xs);
+  padding: 0 var(--ai-flux-space-1);
+}
+
+/* ── Anchor / Link ────────────────────────────────────────── */
+
+a {
+  color: var(--ai-flux-text-link);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition:
+    color var(--ai-flux-transition-fast),
+    text-decoration-color var(--ai-flux-transition-fast);
+}
+
+a:hover {
+  color: var(--ai-flux-text-link-hover);
+  text-decoration-color: var(--ai-flux-text-link-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--ai-flux-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--ai-flux-radius-xs);
+}
+
+/* ── Code / Monospace ─────────────────────────────────────── */
+
+code,
+kbd,
+samp,
+tt {
+  font-family: var(--ai-flux-font-mono);
+  font-size: 0.9em;
+}
+
+code {
+  background-color: var(--ai-flux-surface-sunken);
+  color: var(--ai-flux-text-accent);
+  border: 1px solid var(--ai-flux-border-subtle);
+  border-radius: var(--ai-flux-radius-sm);
+  padding: 0.1em var(--ai-flux-space-1);
+}
+
+kbd {
+  background-color: var(--ai-flux-surface-raised);
+  color: var(--ai-flux-text-secondary);
+  border: 1px solid var(--ai-flux-border-default);
+  border-bottom-width: 2px;
+  border-radius: var(--ai-flux-radius-sm);
+  padding: 0.1em var(--ai-flux-space-2);
+  font-size: var(--ai-flux-text-xs);
+  letter-spacing: var(--ai-flux-tracking-wide);
+}
+
+pre {
+  font-family: var(--ai-flux-font-mono);
+  font-size: var(--ai-flux-text-sm);
+  line-height: var(--ai-flux-leading-relaxed);
+  background-color: var(--ai-flux-surface-sunken);
+  border: 1px solid var(--ai-flux-border-subtle);
+  border-radius: var(--ai-flux-radius-lg);
+  padding: var(--ai-flux-space-4) var(--ai-flux-space-6);
+  overflow-x: auto;
+  tab-size: 2;
+  white-space: pre;
+}
+
+pre code {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ── Blockquote ───────────────────────────────────────────── */
+
+blockquote {
+  border-left: 3px solid var(--ai-flux-border-accent);
+  padding: var(--ai-flux-space-3) var(--ai-flux-space-6);
+  color: var(--ai-flux-text-secondary);
+  font-style: italic;
+  font-size: var(--ai-flux-text-lg);
+  line-height: var(--ai-flux-leading-relaxed);
+  background-color: var(--ai-flux-surface-sunken);
+  border-radius: 0 var(--ai-flux-radius-md) var(--ai-flux-radius-md) 0;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--ai-flux-space-2);
+  font-size: var(--ai-flux-text-sm);
+  font-style: normal;
+  color: var(--ai-flux-text-tertiary);
+}
+
+/* ── Lists ────────────────────────────────────────────────── */
+
+ul, ol {
+  padding-left: var(--ai-flux-space-6);
+  color: var(--ai-flux-text-secondary);
+  line-height: var(--ai-flux-leading-relaxed);
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: var(--ai-flux-space-1);
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* Nested lists */
+li ul,
+li ol {
+  margin-top: var(--ai-flux-space-1);
+}
+
+/* ── Description List ─────────────────────────────────────── */
+
+dl {
+  color: var(--ai-flux-text-secondary);
+}
+
+dt {
+  font-weight: var(--ai-flux-font-weight-semibold);
+  color: var(--ai-flux-text-primary);
+  margin-top: var(--ai-flux-space-3);
+}
+
+dt:first-child {
+  margin-top: 0;
+}
+
+dd {
+  margin-left: var(--ai-flux-space-6);
+  margin-top: var(--ai-flux-space-1);
+  color: var(--ai-flux-text-secondary);
+}
+
+/* ── Horizontal Rule ──────────────────────────────────────── */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--ai-flux-border-default);
+  margin: var(--ai-flux-space-8) 0;
+}
+
+/* ── Abbr / Acronym ───────────────────────────────────────── */
+
+abbr[title] {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--ai-flux-text-tertiary);
+  text-underline-offset: 3px;
+}
+
+/* ── Selection ────────────────────────────────────────────── */
+
+::selection {
+  background-color: rgba(0, 191, 255, 0.20);
+  color: var(--ai-flux-text-primary);
+}
+
+/* ── Scrollbar (Chromium & Firefox) ───────────────────────── */
+
+:root {
+  scrollbar-color: var(--ai-flux-border-strong) transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--ai-flux-border-strong);
+  border-radius: var(--ai-flux-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ai-flux-border-accent);
+}
+
+/* ── Focus-visible Global ─────────────────────────────────── */
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ai-flux-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ── Utility: Visually Hidden (accessible) ────────────────── */
+
+.ai-flux-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
