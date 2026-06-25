@@ -1,0 +1,44 @@
+The global CSS file has been written to `/home/user/AI-Flux/src/styles/global.css`.
+
+Here is a summary of everything included:
+
+**File:** `/home/user/AI-Flux/src/styles/global.css`
+
+**Section 1 — CSS Reset/Normalize**
+- Universal `box-sizing: border-box`
+- Margin/padding zeroing for all block-level elements
+- `html` defaults: `text-size-adjust`, `scroll-behavior`, `tab-size`
+- `body` defaults: `min-height: 100%`, antialiasing, `text-rendering`
+- Media normalization (`img`, `video`, `svg`, `canvas`, `iframe`)
+- Form element font inheritance
+- Table `border-collapse`
+- Button and anchor resets
+- `[hidden]` enforcement
+- `prefers-reduced-motion` global suppression
+
+**Section 2 — Primitive Color Tokens**
+- All `--ai-flux-{color}-{step}` variables for: blue, cyan, electric, violet, indigo, slate (including the fractional steps: 150, 250, 650, 750)
+
+**Section 3 — Semantic Tokens (Light Mode on `:root`)**
+- Background, surface, border, text, interactive (primary/secondary/ghost), focus, status (success/warning/error/info), brand accent, shadows, motion, z-index
+
+**Section 4 — Dark Mode Overrides**
+- Applied via both `@media (prefers-color-scheme: dark)` on `:root:not([data-theme="light"])` and via explicit `[data-theme="dark"]` attribute selector (higher specificity, supports manual toggle)
+- All semantic tokens remapped for dark surfaces, muted borders as rgba values, adjusted text opacity levels, deeper shadows
+
+**Sections 5–7 — Structural Tokens**
+- Spacing: `--ai-flux-space-{0..96}` matching the design spec exactly
+- Border-radius: `--ai-flux-radius-{none|xs|sm|md|lg|xl|2xl|3xl|full}`
+- Typography: font families (sans/mono/display), all 14 size steps, 9 weight steps, line-height and letter-spacing scales
+
+**Section 8 — Base Typography Styles**
+- `html` font-size base (16px rem anchor)
+- `body` wired to `--ai-flux-font-sans`, `--ai-flux-text-base`, and semantic color tokens
+- Heading styles h1–h6 with appropriate size/weight/tracking
+- Paragraph, lead, small/caption utilities
+- Inline elements: `strong`, `em`, `mark`, `del`, `u`, `abbr`
+- Links with hover and focus-visible states
+- Code, `kbd`, `pre` with monospace font and surface styling
+- Blockquote with accent border
+- Ordered/unordered/description lists
+- `hr`, `::selection`, themed scrollbars (Webkit + Firefox), global `:focus-visible`, and `.ai-flux-sr-only` utility class
