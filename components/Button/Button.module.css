@@ -1,0 +1,148 @@
+/* AI Flux 2.0 — Button Component
+   All values reference CSS custom properties derived from design tokens.
+   Never use raw values here — always reference tokens via var(). */
+
+.button {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  flex-shrink: 0;
+
+  /* Typography */
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--font-letter-spacing-wide);
+  text-decoration: none;
+  white-space: nowrap;
+
+  /* Shape */
+  border-style: solid;
+  border-width: var(--border-width-thin);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  /* Transition */
+  transition:
+    background-color var(--duration-normal) var(--easing-ease-out),
+    border-color var(--duration-normal) var(--easing-ease-out),
+    box-shadow var(--duration-normal) var(--easing-ease-out),
+    opacity var(--duration-normal) var(--easing-ease-out);
+
+  /* Focus */
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* ── Variants ─────────────────────────────────────────────── */
+
+.variant-primary {
+  background-color: var(--component-button-primary-bg);
+  color: var(--component-button-primary-text);
+  border-color: transparent;
+}
+.variant-primary:hover:not(:disabled) {
+  background-color: var(--component-button-primary-bg-hover);
+  box-shadow: var(--shadow-glow-purple);
+}
+.variant-primary:active:not(:disabled) {
+  background-color: var(--component-button-primary-bg-active);
+  box-shadow: none;
+}
+
+.variant-secondary {
+  background-color: var(--component-button-secondary-bg);
+  color: var(--component-button-secondary-text);
+  border-color: var(--component-button-secondary-border);
+}
+.variant-secondary:hover:not(:disabled) {
+  background-color: var(--component-button-secondary-bg-hover);
+}
+
+.variant-ghost {
+  background-color: var(--component-button-ghost-bg);
+  color: var(--component-button-ghost-text);
+  border-color: transparent;
+}
+.variant-ghost:hover:not(:disabled) {
+  background-color: var(--component-button-ghost-bg-hover);
+}
+
+.variant-destructive {
+  background-color: var(--color-status-error);
+  color: var(--color-neutral-white);
+  border-color: transparent;
+}
+.variant-destructive:hover:not(:disabled) {
+  background-color: #DC2626;
+}
+
+/* ── Sizes ────────────────────────────────────────────────── */
+
+.size-sm {
+  padding: var(--component-button-size-sm-padding-y) var(--component-button-size-sm-padding-x);
+  font-size: var(--component-button-size-sm-font-size);
+  border-radius: var(--component-button-size-sm-border-radius);
+  min-height: var(--component-button-size-sm-min-height);
+}
+
+.size-md {
+  padding: var(--component-button-size-md-padding-y) var(--component-button-size-md-padding-x);
+  font-size: var(--component-button-size-md-font-size);
+  border-radius: var(--component-button-size-md-border-radius);
+  min-height: var(--component-button-size-md-min-height);
+}
+
+.size-lg {
+  padding: var(--component-button-size-lg-padding-y) var(--component-button-size-lg-padding-x);
+  font-size: var(--component-button-size-lg-font-size);
+  border-radius: var(--component-button-size-lg-border-radius);
+  min-height: var(--component-button-size-lg-min-height);
+}
+
+/* ── States ───────────────────────────────────────────────── */
+
+.button:disabled,
+.loading {
+  background-color: var(--component-button-disabled-bg);
+  color: var(--component-button-disabled-text);
+  border-color: var(--component-button-disabled-border);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ── Inner elements ───────────────────────────────────────── */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.label {
+  line-height: 1;
+}
+
+.spinner {
+  display: inline-flex;
+  align-items: center;
+}
+
+.spinnerIcon {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

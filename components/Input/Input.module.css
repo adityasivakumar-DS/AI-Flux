@@ -1,0 +1,116 @@
+/* AI Flux 2.0 — Input Component */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1-5);
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-family-secondary);
+  font-size: var(--component-input-label-font-size);
+  font-weight: var(--component-input-label-font-weight);
+  color: var(--component-input-label-color);
+  line-height: 1.4;
+}
+
+.required {
+  color: var(--color-status-error);
+  margin-left: 2px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--component-input-bg);
+  border: var(--component-input-border-width) solid var(--component-input-border);
+  border-radius: var(--component-input-border-radius);
+  transition:
+    border-color var(--duration-normal) var(--easing-ease-out),
+    box-shadow var(--duration-normal) var(--easing-ease-out);
+  position: relative;
+}
+
+.inputWrapper:hover:not(:focus-within) {
+  border-color: var(--component-input-border-hover);
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--component-input-border-focus);
+  box-shadow: 0 0 0 var(--component-input-focus-ring-width) rgba(0, 229, 255, 0.15);
+  background-color: var(--component-input-bg-focus);
+}
+
+/* ── Sizes ────────────────────────────────────────────────── */
+
+.size-sm { height: var(--component-input-height-sm); padding: 0 var(--spacing-3); }
+.size-md { height: var(--component-input-height-md); padding: 0 var(--spacing-4); }
+.size-lg { height: var(--component-input-height-lg); padding: 0 var(--spacing-4); }
+
+/* ── Status ───────────────────────────────────────────────── */
+
+.status-error { border-color: var(--component-input-border-error); }
+.status-error:focus-within {
+  border-color: var(--component-input-border-error);
+  box-shadow: 0 0 0 var(--component-input-focus-ring-width) rgba(239, 68, 68, 0.15);
+}
+
+.status-success { border-color: var(--component-input-border-success); }
+.status-success:focus-within {
+  border-color: var(--component-input-border-success);
+  box-shadow: 0 0 0 var(--component-input-focus-ring-width) rgba(0, 200, 150, 0.15);
+}
+
+/* ── Core Input ───────────────────────────────────────────── */
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--component-input-font-family);
+  font-size: var(--component-input-font-size);
+  color: var(--component-input-text);
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--component-input-text-placeholder);
+}
+
+.input:disabled {
+  color: var(--component-input-text-disabled);
+  cursor: not-allowed;
+}
+
+/* ── Adornments ───────────────────────────────────────────── */
+
+.adornment {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  padding-right: var(--spacing-2);
+}
+
+.adornmentRight {
+  padding-right: 0;
+  padding-left: var(--spacing-2);
+}
+
+/* ── Helper / Error text ──────────────────────────────────── */
+
+.helperText {
+  font-family: var(--font-family-secondary);
+  font-size: var(--component-input-helper-font-size);
+  color: var(--component-input-helper-color);
+  line-height: 1.4;
+}
+
+.errorText {
+  font-family: var(--font-family-secondary);
+  font-size: var(--component-input-helper-font-size);
+  color: var(--component-input-error-color);
+  line-height: 1.4;
+}

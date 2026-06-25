@@ -1,0 +1,26 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["component/avatar"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0"
+  },
+  "component": {
+    "avatar": {
+      "bg": { "$value": "{color.flux-purple-faint}", "$type": "color" },
+      "text": { "$value": "{color.flux-purple-light}", "$type": "color" },
+      "border": { "$value": "{color.border.subtle}", "$type": "color" },
+      "border-width": { "$value": "{border.width.medium}", "$type": "dimension" },
+      "border-radius": { "$value": "{radius.full}", "$type": "dimension" },
+      "font-weight": { "$value": "{font.weight.semibold}", "$type": "fontWeight" },
+      "size": {
+        "xs": { "$value": "24px", "$type": "dimension" },
+        "sm": { "$value": "32px", "$type": "dimension" },
+        "md": { "$value": "40px", "$type": "dimension" },
+        "lg": { "$value": "48px", "$type": "dimension" },
+        "xl": { "$value": "64px", "$type": "dimension" },
+        "2xl": { "$value": "96px", "$type": "dimension" }
+      }
+    }
+  }
+}

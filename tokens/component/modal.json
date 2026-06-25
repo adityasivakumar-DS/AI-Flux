@@ -1,0 +1,27 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["component/modal"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0"
+  },
+  "component": {
+    "modal": {
+      "bg": { "$value": "{color.background.elevated}", "$type": "color" },
+      "border": { "$value": "{color.border.subtle}", "$type": "color" },
+      "border-radius": { "$value": "{radius.xl}", "$type": "dimension" },
+      "shadow": { "$value": "{shadow.xl}", "$type": "shadow" },
+      "padding": { "$value": "{spacing.8}", "$type": "dimension" },
+      "header-padding-b": { "$value": "{spacing.6}", "$type": "dimension" },
+      "footer-padding-t": { "$value": "{spacing.6}", "$type": "dimension" },
+      "overlay-bg": { "$value": "{color.background.overlay}", "$type": "color" },
+      "transition-duration": { "$value": "{duration.slow}", "$type": "duration" },
+      "max-width": {
+        "sm": { "$value": "400px", "$type": "dimension" },
+        "md": { "$value": "560px", "$type": "dimension" },
+        "lg": { "$value": "720px", "$type": "dimension" },
+        "xl": { "$value": "960px", "$type": "dimension" }
+      }
+    }
+  }
+}

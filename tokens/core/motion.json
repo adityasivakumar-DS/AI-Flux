@@ -1,0 +1,49 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["core/motion"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0",
+    "notes": "AI Flux motion is purposeful and fluid — reflecting the 'flowing intelligence' brand ethos. Use spring easing for interactive feedback, ease-out for entrances, ease-in for exits."
+  },
+  "duration": {
+    "instant": { "$value": "0ms", "$type": "duration", "$description": "No transition" },
+    "fast": { "$value": "100ms", "$type": "duration", "$description": "Micro-interactions — tooltips, hovers" },
+    "normal": { "$value": "200ms", "$type": "duration", "$description": "Standard transition — buttons, inputs" },
+    "slow": { "$value": "300ms", "$type": "duration", "$description": "Content transitions — modals, panels" },
+    "slower": { "$value": "500ms", "$type": "duration", "$description": "Complex animations — page transitions" },
+    "deliberate": { "$value": "700ms", "$type": "duration", "$description": "Hero animations, onboarding flows" }
+  },
+  "easing": {
+    "linear": {
+      "$value": "linear",
+      "$type": "cubicBezier",
+      "$description": "Constant speed — progress bars, loaders"
+    },
+    "ease-in": {
+      "$value": "cubic-bezier(0.4, 0, 1, 1)",
+      "$type": "cubicBezier",
+      "$description": "Accelerate — exit animations"
+    },
+    "ease-out": {
+      "$value": "cubic-bezier(0, 0, 0.2, 1)",
+      "$type": "cubicBezier",
+      "$description": "Decelerate — entrance animations (default)"
+    },
+    "ease-in-out": {
+      "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "$type": "cubicBezier",
+      "$description": "Standard — general UI transitions"
+    },
+    "spring": {
+      "$value": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "$type": "cubicBezier",
+      "$description": "Overshoot spring — interactive feedback, toggles, selectors"
+    },
+    "flow": {
+      "$value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "$type": "cubicBezier",
+      "$description": "Gentle flow — content reveals, cards"
+    }
+  }
+}

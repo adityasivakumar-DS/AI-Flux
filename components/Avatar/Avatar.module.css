@@ -1,0 +1,39 @@
+/* AI Flux 2.0 — Avatar Component */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--component-avatar-bg);
+  color: var(--component-avatar-text);
+  border: var(--component-avatar-border-width) solid var(--component-avatar-border);
+  border-radius: var(--component-avatar-border-radius);
+  overflow: hidden;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.initials {
+  font-weight: var(--component-avatar-font-weight);
+  font-family: var(--font-family-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Sizes ────────────────────────────────────────────────── */
+
+.size-xs  { width: var(--component-avatar-size-xs);  height: var(--component-avatar-size-xs);  font-size: 9px; }
+.size-sm  { width: var(--component-avatar-size-sm);  height: var(--component-avatar-size-sm);  font-size: 12px; }
+.size-md  { width: var(--component-avatar-size-md);  height: var(--component-avatar-size-md);  font-size: 14px; }
+.size-lg  { width: var(--component-avatar-size-lg);  height: var(--component-avatar-size-lg);  font-size: 18px; }
+.size-xl  { width: var(--component-avatar-size-xl);  height: var(--component-avatar-size-xl);  font-size: 24px; }
+.size-2xl { width: var(--component-avatar-size-2xl); height: var(--component-avatar-size-2xl); font-size: 36px; }

@@ -1,0 +1,199 @@
+/* AI Flux 2.0 — Dashboard Layout */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-background-canvas);
+}
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+
+.sidebar {
+  width: var(--spacing-layout-sidebar-width);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background-primary);
+  border-right: 1px solid var(--color-border-subtle);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  transition: width var(--duration-normal) var(--easing-ease-in-out);
+}
+
+.collapsed .sidebar {
+  width: 64px;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-5) var(--spacing-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  min-height: var(--spacing-layout-topbar-height);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.brandLogo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-body-large);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.collapseBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  padding: var(--spacing-1-5);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color var(--duration-fast), background-color var(--duration-fast);
+}
+
+.collapseBtn:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-background-tertiary);
+}
+
+.sidebarNav {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--spacing-4) var(--spacing-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-default) transparent;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.sectionTitle {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--font-letter-spacing-wider);
+  padding: 0 var(--spacing-3);
+  margin: 0 0 var(--spacing-1);
+}
+
+.itemList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  transition:
+    color var(--duration-fast) var(--easing-ease-out),
+    background-color var(--duration-fast) var(--easing-ease-out);
+}
+
+.item:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-background-tertiary);
+}
+
+.item.active {
+  color: var(--color-text-primary);
+  background-color: var(--color-flux-purple-faint);
+  color: var(--color-flux-purple-light);
+}
+
+.itemIcon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.itemLabel {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemBadge {
+  font-size: var(--font-size-caption);
+  background-color: var(--color-flux-purple-faint);
+  color: var(--color-flux-purple-light);
+  border-radius: var(--radius-full);
+  padding: 1px 6px;
+  font-weight: var(--font-weight-semibold);
+  min-width: 18px;
+  text-align: center;
+}
+
+/* ── Main content area ────────────────────────────────────── */
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  height: var(--spacing-layout-topbar-height);
+  border-bottom: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-8);
+  background-color: var(--color-background-primary);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+}
+
+.content {
+  flex: 1;
+  padding: var(--spacing-8);
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+}

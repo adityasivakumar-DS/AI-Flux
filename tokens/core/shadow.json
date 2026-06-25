@@ -1,0 +1,66 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["core/shadow"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0",
+    "notes": "AI Flux uses deep shadows to reinforce the dark-first identity, with brand-colored glow effects for interactive elements."
+  },
+  "shadow": {
+    "none": {
+      "$value": "none",
+      "$type": "shadow",
+      "$description": "No shadow"
+    },
+    "xs": {
+      "$value": "0 1px 2px rgba(0, 0, 0, 0.3)",
+      "$type": "shadow",
+      "$description": "Hairline lift"
+    },
+    "sm": {
+      "$value": "0 1px 4px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.2)",
+      "$type": "shadow",
+      "$description": "Small — subtle card lift"
+    },
+    "md": {
+      "$value": "0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.25)",
+      "$type": "shadow",
+      "$description": "Medium — cards, dropdowns"
+    },
+    "lg": {
+      "$value": "0 8px 32px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3)",
+      "$type": "shadow",
+      "$description": "Large — modals, popovers"
+    },
+    "xl": {
+      "$value": "0 16px 64px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.35)",
+      "$type": "shadow",
+      "$description": "Extra large — full-screen overlays"
+    },
+    "glow-purple": {
+      "$value": "0 0 20px rgba(124, 58, 237, 0.5), 0 0 40px rgba(124, 58, 237, 0.2)",
+      "$type": "shadow",
+      "$description": "Purple glow — primary interactive hover"
+    },
+    "glow-blue": {
+      "$value": "0 0 20px rgba(37, 99, 235, 0.5), 0 0 40px rgba(37, 99, 235, 0.2)",
+      "$type": "shadow",
+      "$description": "Blue glow — secondary interactive hover"
+    },
+    "glow-cyan": {
+      "$value": "0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(0, 229, 255, 0.15)",
+      "$type": "shadow",
+      "$description": "Cyan glow — focused state, data highlights"
+    },
+    "glow-green": {
+      "$value": "0 0 16px rgba(0, 200, 150, 0.4), 0 0 32px rgba(0, 200, 150, 0.15)",
+      "$type": "shadow",
+      "$description": "Green glow — success state"
+    },
+    "inset-sm": {
+      "$value": "inset 0 1px 2px rgba(0, 0, 0, 0.4)",
+      "$type": "shadow",
+      "$description": "Inset small — pressed states, inputs"
+    }
+  }
+}

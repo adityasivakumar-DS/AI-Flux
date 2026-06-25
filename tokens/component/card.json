@@ -1,0 +1,29 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["component/card"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0"
+  },
+  "component": {
+    "card": {
+      "bg": { "$value": "{color.background.secondary}", "$type": "color" },
+      "bg-hover": { "$value": "{color.background.tertiary}", "$type": "color" },
+      "bg-elevated": { "$value": "{color.background.elevated}", "$type": "color" },
+      "border": { "$value": "{color.border.subtle}", "$type": "color" },
+      "border-hover": { "$value": "{color.border.default}", "$type": "color" },
+      "border-accent": { "$value": "{color.border.accent}", "$type": "color" },
+      "border-width": { "$value": "{border.width.thin}", "$type": "dimension" },
+      "border-radius": { "$value": "{radius.lg}", "$type": "dimension" },
+      "padding": { "$value": "{spacing.6}", "$type": "dimension" },
+      "padding-sm": { "$value": "{spacing.4}", "$type": "dimension" },
+      "padding-lg": { "$value": "{spacing.8}", "$type": "dimension" },
+      "shadow": { "$value": "{shadow.md}", "$type": "shadow" },
+      "shadow-hover": { "$value": "{shadow.lg}", "$type": "shadow" },
+      "transition-duration": { "$value": "{duration.normal}", "$type": "duration" },
+      "header-font-size": { "$value": "{font.size.heading-2}", "$type": "dimension" },
+      "header-font-weight": { "$value": "{font.weight.semibold}", "$type": "fontWeight" },
+      "body-gap": { "$value": "{spacing.4}", "$type": "dimension" }
+    }
+  }
+}

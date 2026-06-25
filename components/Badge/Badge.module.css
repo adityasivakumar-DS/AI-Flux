@@ -1,0 +1,61 @@
+/* AI Flux 2.0 — Badge Component */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  font-family: var(--component-badge-font-family);
+  font-size: var(--component-badge-font-size);
+  font-weight: var(--component-badge-font-weight);
+  letter-spacing: var(--component-badge-letter-spacing);
+  border-radius: var(--component-badge-border-radius);
+  padding: var(--component-badge-padding-y) var(--component-badge-padding-x);
+  border: 1px solid;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.variant-default {
+  background-color: var(--component-badge-default-bg);
+  color: var(--component-badge-default-text);
+  border-color: var(--component-badge-default-border);
+}
+
+.variant-primary {
+  background-color: var(--component-badge-primary-bg);
+  color: var(--component-badge-primary-text);
+  border-color: var(--component-badge-primary-border);
+}
+
+.variant-success {
+  background-color: var(--component-badge-success-bg);
+  color: var(--component-badge-success-text);
+  border-color: var(--component-badge-success-border);
+}
+
+.variant-warning {
+  background-color: var(--component-badge-warning-bg);
+  color: var(--component-badge-warning-text);
+  border-color: var(--component-badge-warning-border);
+}
+
+.variant-error {
+  background-color: var(--component-badge-error-bg);
+  color: var(--component-badge-error-text);
+  border-color: var(--component-badge-error-border);
+}
+
+.variant-info {
+  background-color: var(--component-badge-info-bg);
+  color: var(--component-badge-info-text);
+  border-color: var(--component-badge-info-border);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}

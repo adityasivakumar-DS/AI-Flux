@@ -1,0 +1,132 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["semantic/color.light"],
+    "brand": "AI Flux 2.0",
+    "mode": "light",
+    "version": "1.0.0"
+  },
+  "color": {
+    "background": {
+      "canvas": {
+        "$value": "{color.neutral-off-white}",
+        "$type": "color"
+      },
+      "primary": {
+        "$value": "{color.neutral-white}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.neutral-off-white}",
+        "$type": "color"
+      },
+      "tertiary": {
+        "$value": "{color.neutral-light}",
+        "$type": "color"
+      },
+      "elevated": {
+        "$value": "{color.neutral-white}",
+        "$type": "color"
+      },
+      "overlay": {
+        "$value": "rgba(15, 23, 42, 0.6)",
+        "$type": "color"
+      },
+      "inverse": {
+        "$value": "{color.neutral-dark}",
+        "$type": "color"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{color.neutral-dark}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.neutral-slate}",
+        "$type": "color"
+      },
+      "tertiary": {
+        "$value": "{color.neutral-gray}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{color.neutral-cool-gray}",
+        "$type": "color"
+      },
+      "inverse": {
+        "$value": "{color.neutral-white}",
+        "$type": "color"
+      },
+      "accent": {
+        "$value": "{color.flux-purple}",
+        "$type": "color"
+      },
+      "link": {
+        "$value": "{color.flux-blue}",
+        "$type": "color"
+      },
+      "link-hover": {
+        "$value": "{color.flux-blue-dark}",
+        "$type": "color"
+      },
+      "success": { "$value": "{color.flux-green-dark}", "$type": "color" },
+      "warning": { "$value": "#B45309", "$type": "color" },
+      "error": { "$value": "#DC2626", "$type": "color" },
+      "info": { "$value": "{color.flux-blue}", "$type": "color" }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.neutral-light}",
+        "$type": "color"
+      },
+      "subtle": {
+        "$value": "rgba(15, 23, 42, 0.08)",
+        "$type": "color"
+      },
+      "strong": {
+        "$value": "{color.neutral-cool-gray}",
+        "$type": "color"
+      },
+      "focus": {
+        "$value": "{color.flux-purple}",
+        "$type": "color"
+      },
+      "accent": {
+        "$value": "{color.flux-purple}",
+        "$type": "color"
+      },
+      "error": { "$value": "#DC2626", "$type": "color" },
+      "success": { "$value": "{color.flux-green-dark}", "$type": "color" }
+    },
+    "interactive": {
+      "primary-bg": { "$value": "{color.flux-purple}", "$type": "color" },
+      "primary-bg-hover": { "$value": "{color.flux-purple-dark}", "$type": "color" },
+      "primary-bg-active": { "$value": "{color.flux-purple-darker}", "$type": "color" },
+      "primary-text": { "$value": "{color.neutral-white}", "$type": "color" },
+      "secondary-bg": { "$value": "transparent", "$type": "color" },
+      "secondary-bg-hover": { "$value": "rgba(124, 58, 237, 0.05)", "$type": "color" },
+      "secondary-border": { "$value": "{color.flux-purple}", "$type": "color" },
+      "secondary-text": { "$value": "{color.flux-purple}", "$type": "color" },
+      "ghost-bg-hover": { "$value": "rgba(15, 23, 42, 0.05)", "$type": "color" },
+      "ghost-text": { "$value": "{color.neutral-slate}", "$type": "color" },
+      "disabled-bg": { "$value": "{color.neutral-light}", "$type": "color" },
+      "disabled-text": { "$value": "{color.neutral-cool-gray}", "$type": "color" },
+      "disabled-border": { "$value": "{color.neutral-light}", "$type": "color" }
+    },
+    "status": {
+      "success-bg": { "$value": "#F0FDF4", "$type": "color" },
+      "success-text": { "$value": "#166534", "$type": "color" },
+      "success-border": { "$value": "#BBF7D0", "$type": "color" },
+      "warning-bg": { "$value": "#FFFBEB", "$type": "color" },
+      "warning-text": { "$value": "#92400E", "$type": "color" },
+      "warning-border": { "$value": "#FDE68A", "$type": "color" },
+      "error-bg": { "$value": "#FEF2F2", "$type": "color" },
+      "error-text": { "$value": "#991B1B", "$type": "color" },
+      "error-border": { "$value": "#FECACA", "$type": "color" },
+      "info-bg": { "$value": "#EFF6FF", "$type": "color" },
+      "info-text": { "$value": "#1E40AF", "$type": "color" },
+      "info-border": { "$value": "#BFDBFE", "$type": "color" }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["core/radius"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0"
+  },
+  "radius": {
+    "none": { "$value": "0px", "$type": "dimension", "$description": "No rounding" },
+    "xs": { "$value": "2px", "$type": "dimension", "$description": "Extra small — micro elements" },
+    "sm": { "$value": "4px", "$type": "dimension", "$description": "Small — badges, chips, tags" },
+    "md": { "$value": "8px", "$type": "dimension", "$description": "Medium — inputs, buttons (default)" },
+    "lg": { "$value": "12px", "$type": "dimension", "$description": "Large — cards, panels" },
+    "xl": { "$value": "16px", "$type": "dimension", "$description": "Extra large — modals, drawers" },
+    "2xl": { "$value": "24px", "$type": "dimension", "$description": "2x large — featured cards" },
+    "3xl": { "$value": "32px", "$type": "dimension", "$description": "3x large — hero sections" },
+    "full": { "$value": "9999px", "$type": "dimension", "$description": "Fully rounded — pills, avatars" }
+  }
+}

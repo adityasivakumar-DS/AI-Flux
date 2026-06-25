@@ -1,0 +1,34 @@
+/* AI Flux 2.0 — Spinner Component */
+
+.spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arc {
+  animation: spin var(--duration-slower, 500ms) linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.variant-default { color: var(--color-text-muted); }
+.variant-brand   { color: var(--color-flux-purple); }
+.variant-success { color: var(--color-flux-green); }
+.variant-muted   { color: var(--color-neutral-cool-gray); }
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

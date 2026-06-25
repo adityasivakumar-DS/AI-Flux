@@ -1,0 +1,123 @@
+/* AI Flux 2.0 — Typography Component */
+
+.base {
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Variants ─────────────────────────────────────────────── */
+
+.variant-display-1 {
+  font-family: var(--typography-display-1-font-family);
+  font-size: var(--typography-display-1-font-size);
+  font-weight: var(--typography-display-1-font-weight);
+  line-height: var(--typography-display-1-line-height);
+  letter-spacing: var(--typography-display-1-letter-spacing);
+}
+
+.variant-display-2 {
+  font-family: var(--typography-display-2-font-family);
+  font-size: var(--typography-display-2-font-size);
+  font-weight: var(--typography-display-2-font-weight);
+  line-height: var(--typography-display-2-line-height);
+  letter-spacing: var(--typography-display-2-letter-spacing);
+}
+
+.variant-heading-1 {
+  font-family: var(--typography-heading-1-font-family);
+  font-size: var(--typography-heading-1-font-size);
+  font-weight: var(--typography-heading-1-font-weight);
+  line-height: var(--typography-heading-1-line-height);
+  letter-spacing: var(--typography-heading-1-letter-spacing);
+}
+
+.variant-heading-2 {
+  font-family: var(--typography-heading-2-font-family);
+  font-size: var(--typography-heading-2-font-size);
+  font-weight: var(--typography-heading-2-font-weight);
+  line-height: var(--typography-heading-2-line-height);
+  letter-spacing: var(--typography-heading-2-letter-spacing);
+}
+
+.variant-heading-3 {
+  font-family: var(--typography-heading-3-font-family);
+  font-size: var(--typography-heading-3-font-size);
+  font-weight: var(--typography-heading-3-font-weight);
+  line-height: var(--typography-heading-3-line-height);
+  letter-spacing: var(--typography-heading-3-letter-spacing);
+}
+
+.variant-body-large {
+  font-family: var(--typography-body-large-font-family);
+  font-size: var(--typography-body-large-font-size);
+  font-weight: var(--typography-body-large-font-weight);
+  line-height: var(--typography-body-large-line-height);
+}
+
+.variant-body {
+  font-family: var(--typography-body-font-family);
+  font-size: var(--typography-body-font-size);
+  font-weight: var(--typography-body-font-weight);
+  line-height: var(--typography-body-line-height);
+}
+
+.variant-small {
+  font-family: var(--typography-small-font-family);
+  font-size: var(--typography-small-font-size);
+  font-weight: var(--typography-small-font-weight);
+  line-height: var(--typography-small-line-height);
+}
+
+.variant-caption {
+  font-family: var(--typography-caption-font-family);
+  font-size: var(--typography-caption-font-size);
+  font-weight: var(--typography-caption-font-weight);
+  line-height: var(--typography-caption-line-height);
+  letter-spacing: var(--typography-caption-letter-spacing);
+}
+
+.variant-label {
+  font-family: var(--typography-label-font-family);
+  font-size: var(--typography-label-font-size);
+  font-weight: var(--typography-label-font-weight);
+  line-height: var(--typography-label-line-height);
+  letter-spacing: var(--typography-label-letter-spacing);
+}
+
+.variant-code {
+  font-family: var(--typography-code-font-family);
+  font-size: var(--typography-code-font-size);
+  font-weight: var(--typography-code-font-weight);
+  line-height: var(--typography-code-line-height);
+  background-color: var(--color-background-tertiary);
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Colors ───────────────────────────────────────────────── */
+
+.color-primary   { color: var(--color-text-primary); }
+.color-secondary { color: var(--color-text-secondary); }
+.color-tertiary  { color: var(--color-text-tertiary); }
+.color-muted     { color: var(--color-text-muted); }
+.color-accent    { color: var(--color-text-accent); }
+.color-link      { color: var(--color-text-link); }
+.color-success   { color: var(--color-text-success); }
+.color-warning   { color: var(--color-text-warning); }
+.color-error     { color: var(--color-text-error); }
+
+/* ── Utilities ────────────────────────────────────────────── */
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gradient {
+  background: var(--brand-gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

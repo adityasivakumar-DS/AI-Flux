@@ -1,0 +1,96 @@
+/* AI Flux 2.0 — Card Component */
+
+.card {
+  background-color: var(--component-card-bg);
+  border: var(--component-card-border-width) solid var(--component-card-border);
+  border-radius: var(--component-card-border-radius);
+  box-shadow: var(--component-card-shadow);
+  position: relative;
+  overflow: hidden;
+  transition:
+    box-shadow var(--duration-normal) var(--easing-ease-out),
+    border-color var(--duration-normal) var(--easing-ease-out),
+    transform var(--duration-normal) var(--easing-ease-out);
+}
+
+/* ── Variants ─────────────────────────────────────────────── */
+
+.variant-default {
+  background-color: var(--component-card-bg);
+}
+
+.variant-elevated {
+  background-color: var(--component-card-bg-elevated);
+  box-shadow: var(--component-card-shadow);
+}
+
+.variant-outline {
+  background-color: transparent;
+  border-color: var(--component-card-border);
+  box-shadow: none;
+}
+
+.variant-glass {
+  background-color: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: var(--component-card-border);
+}
+
+.variant-accent {
+  background-color: var(--component-card-bg);
+  border-top: 3px solid var(--component-card-border-accent);
+}
+
+/* ── Accent colours ───────────────────────────────────────── */
+
+.accent-purple { border-top-color: var(--color-flux-purple) !important; }
+.accent-blue   { border-top-color: var(--color-flux-blue) !important; }
+.accent-cyan   { border-top-color: var(--color-flux-cyan) !important; }
+.accent-green  { border-top-color: var(--color-flux-green) !important; }
+
+/* ── Interactive ──────────────────────────────────────────── */
+
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  border-color: var(--component-card-border-hover);
+  box-shadow: var(--component-card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.interactive:active {
+  transform: translateY(0);
+}
+
+/* ── Padding ──────────────────────────────────────────────── */
+
+.padding-none { padding: 0; }
+.padding-sm   { padding: var(--component-card-padding-sm); }
+.padding-md   { padding: var(--component-card-padding); }
+.padding-lg   { padding: var(--component-card-padding-lg); }
+
+/* ── Sections ─────────────────────────────────────────────── */
+
+.header {
+  padding-bottom: var(--spacing-4);
+  border-bottom: var(--border-width-thin) solid var(--component-card-border);
+  margin-bottom: var(--spacing-4);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--component-card-body-gap);
+}
+
+.footer {
+  padding-top: var(--spacing-4);
+  border-top: var(--border-width-thin) solid var(--component-card-border);
+  margin-top: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}

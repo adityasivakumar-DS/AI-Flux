@@ -1,0 +1,21 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["core/border"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0"
+  },
+  "border": {
+    "width": {
+      "none": { "$value": "0px", "$type": "dimension" },
+      "thin": { "$value": "1px", "$type": "dimension", "$description": "Default border width" },
+      "medium": { "$value": "2px", "$type": "dimension", "$description": "Focus rings, icon strokes" },
+      "thick": { "$value": "4px", "$type": "dimension", "$description": "Accents, left-border decorations" }
+    },
+    "style": {
+      "solid": { "$value": "solid", "$type": "string" },
+      "dashed": { "$value": "dashed", "$type": "string" },
+      "dotted": { "$value": "dotted", "$type": "string" }
+    }
+  }
+}

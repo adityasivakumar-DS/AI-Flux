@@ -1,0 +1,80 @@
+/* AI Flux 2.0 — Alert Component */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  border: var(--border-width-thin) solid;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--spacing-1);
+  line-height: 1.4;
+}
+
+.body {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+}
+
+.dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.6;
+  padding: var(--spacing-0-5);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  transition: opacity var(--duration-fast) var(--easing-ease-out);
+}
+
+.dismiss:hover { opacity: 1; }
+
+/* ── Variants ─────────────────────────────────────────────── */
+
+.variant-info {
+  background-color: var(--color-status-info-bg);
+  color: var(--color-status-info-text);
+  border-color: var(--color-status-info-border);
+}
+
+.variant-success {
+  background-color: var(--color-status-success-bg);
+  color: var(--color-status-success-text);
+  border-color: var(--color-status-success-border);
+}
+
+.variant-warning {
+  background-color: var(--color-status-warning-bg);
+  color: var(--color-status-warning-text);
+  border-color: var(--color-status-warning-border);
+}
+
+.variant-error {
+  background-color: var(--color-status-error-bg);
+  color: var(--color-status-error-text);
+  border-color: var(--color-status-error-border);
+}

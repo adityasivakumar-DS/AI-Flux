@@ -1,0 +1,49 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["component/badge"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0"
+  },
+  "component": {
+    "badge": {
+      "font-size": { "$value": "{font.size.caption}", "$type": "dimension" },
+      "font-weight": { "$value": "{font.weight.semibold}", "$type": "fontWeight" },
+      "font-family": { "$value": "{font.family.secondary}", "$type": "fontFamily" },
+      "letter-spacing": { "$value": "{font.letter-spacing.wider}", "$type": "dimension" },
+      "border-radius": { "$value": "{radius.full}", "$type": "dimension" },
+      "padding-x": { "$value": "{spacing.2}", "$type": "dimension" },
+      "padding-y": { "$value": "{spacing.0.5}", "$type": "dimension" },
+      "default": {
+        "bg": { "$value": "{color.background.tertiary}", "$type": "color" },
+        "text": { "$value": "{color.text.secondary}", "$type": "color" },
+        "border": { "$value": "{color.border.default}", "$type": "color" }
+      },
+      "primary": {
+        "bg": { "$value": "{color.flux-purple-faint}", "$type": "color" },
+        "text": { "$value": "{color.flux-purple-light}", "$type": "color" },
+        "border": { "$value": "rgba(124, 58, 237, 0.3)", "$type": "color" }
+      },
+      "success": {
+        "bg": { "$value": "{color.status.success-bg}", "$type": "color" },
+        "text": { "$value": "{color.status.success-text}", "$type": "color" },
+        "border": { "$value": "{color.status.success-border}", "$type": "color" }
+      },
+      "warning": {
+        "bg": { "$value": "{color.status.warning-bg}", "$type": "color" },
+        "text": { "$value": "{color.status.warning-text}", "$type": "color" },
+        "border": { "$value": "{color.status.warning-border}", "$type": "color" }
+      },
+      "error": {
+        "bg": { "$value": "{color.status.error-bg}", "$type": "color" },
+        "text": { "$value": "{color.status.error-text}", "$type": "color" },
+        "border": { "$value": "{color.status.error-border}", "$type": "color" }
+      },
+      "info": {
+        "bg": { "$value": "{color.status.info-bg}", "$type": "color" },
+        "text": { "$value": "{color.status.info-text}", "$type": "color" },
+        "border": { "$value": "{color.status.info-border}", "$type": "color" }
+      }
+    }
+  }
+}

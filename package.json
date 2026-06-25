@@ -1,0 +1,60 @@
+{
+  "name": "@ai-flux/design-system",
+  "version": "2.0.0",
+  "description": "AI Flux 2.0 — Brand Design System. Built on Enterprise-DS.",
+  "keywords": ["design-system", "ai-flux", "tokens", "react", "components"],
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tokens/css/tokens.dark.css": "./tokens/css/tokens.dark.css",
+    "./tokens/css/tokens.light.css": "./tokens/css/tokens.light.css",
+    "./tokens/js/*": "./tokens/js/*"
+  },
+  "files": [
+    "dist",
+    "tokens/css",
+    "tokens/js",
+    "tokens/figma"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:tokens": "node scripts/build-tokens.js",
+    "transform:tokens": "node scripts/transform-tokens.js",
+    "sync:figma": "node scripts/transform-tokens.js && echo 'Use Figma MCP to push tokens/figma/figma-variables.json'",
+    "storybook": "storybook dev -p 6006 -c storybook/.storybook",
+    "build:storybook": "storybook build -c storybook/.storybook",
+    "lint": "eslint . --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.0.0",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-themes": "^8.0.0",
+    "@storybook/react-vite": "^8.0.0",
+    "@storybook/theming": "^8.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "style-dictionary": "^3.9.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
+  }
+}

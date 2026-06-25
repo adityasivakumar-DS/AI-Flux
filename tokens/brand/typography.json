@@ -1,0 +1,22 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["brand/typography"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0"
+  },
+  "brand": {
+    "typography": {
+      "wordmark": {
+        "font-family": { "$value": "{font.family.primary}", "$type": "fontFamily" },
+        "font-weight": { "$value": "{font.weight.bold}", "$type": "fontWeight" },
+        "letter-spacing": { "$value": "0.08em", "$type": "dimension" }
+      },
+      "tagline": {
+        "font-family": { "$value": "{font.family.primary}", "$type": "fontFamily" },
+        "font-weight": { "$value": "{font.weight.regular}", "$type": "fontWeight" },
+        "letter-spacing": { "$value": "0.02em", "$type": "dimension" }
+      }
+    }
+  }
+}

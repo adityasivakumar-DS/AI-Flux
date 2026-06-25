@@ -1,0 +1,150 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["core/color"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0"
+  },
+  "color": {
+    "flux-navy": {
+      "$value": "#0D0E1A",
+      "$type": "color",
+      "$description": "Deepest brand background — space, depth, intelligence"
+    },
+    "flux-purple": {
+      "$value": "#7C3AED",
+      "$type": "color",
+      "$description": "Primary accent — AI, creativity, intelligence"
+    },
+    "flux-purple-dark": {
+      "$value": "#6D28D9",
+      "$type": "color",
+      "$description": "Purple hover state"
+    },
+    "flux-purple-darker": {
+      "$value": "#5B21B6",
+      "$type": "color",
+      "$description": "Purple active/pressed state"
+    },
+    "flux-purple-light": {
+      "$value": "#A78BFA",
+      "$type": "color",
+      "$description": "Purple on dark surfaces, subtle"
+    },
+    "flux-purple-faint": {
+      "$value": "#1E1033",
+      "$type": "color",
+      "$description": "Purple tinted background"
+    },
+    "flux-blue": {
+      "$value": "#2563EB",
+      "$type": "color",
+      "$description": "Secondary accent — trust, reliability"
+    },
+    "flux-blue-dark": {
+      "$value": "#1D4ED8",
+      "$type": "color",
+      "$description": "Blue hover state"
+    },
+    "flux-blue-light": {
+      "$value": "#60A5FA",
+      "$type": "color",
+      "$description": "Blue on dark surfaces"
+    },
+    "flux-blue-faint": {
+      "$value": "#0F1E3D",
+      "$type": "color",
+      "$description": "Blue tinted background"
+    },
+    "flux-cyan": {
+      "$value": "#00E5FF",
+      "$type": "color",
+      "$description": "Tertiary accent — motion, flow, data streams"
+    },
+    "flux-cyan-dark": {
+      "$value": "#00B8D9",
+      "$type": "color",
+      "$description": "Cyan hover state"
+    },
+    "flux-cyan-faint": {
+      "$value": "#001E2E",
+      "$type": "color",
+      "$description": "Cyan tinted background"
+    },
+    "flux-green": {
+      "$value": "#00C896",
+      "$type": "color",
+      "$description": "Success, positive outcomes, progress"
+    },
+    "flux-green-dark": {
+      "$value": "#00A87E",
+      "$type": "color",
+      "$description": "Green hover state"
+    },
+    "flux-green-faint": {
+      "$value": "#001E17",
+      "$type": "color",
+      "$description": "Green tinted background"
+    },
+    "neutral-dark": {
+      "$value": "#0F172A",
+      "$type": "color",
+      "$description": "Dark neutral — near-black background"
+    },
+    "neutral-slate": {
+      "$value": "#1E293B",
+      "$type": "color",
+      "$description": "Slate — card backgrounds, elevated surfaces"
+    },
+    "neutral-gray": {
+      "$value": "#334155",
+      "$type": "color",
+      "$description": "Mid gray — borders, dividers"
+    },
+    "neutral-cool-gray": {
+      "$value": "#64748B",
+      "$type": "color",
+      "$description": "Cool gray — muted text, placeholders"
+    },
+    "neutral-light": {
+      "$value": "#E2EBF0",
+      "$type": "color",
+      "$description": "Light neutral — light mode backgrounds"
+    },
+    "neutral-off-white": {
+      "$value": "#F8FAFC",
+      "$type": "color",
+      "$description": "Off white — light mode surfaces"
+    },
+    "neutral-white": {
+      "$value": "#FFFFFF",
+      "$type": "color",
+      "$description": "Pure white"
+    },
+    "status-warning": {
+      "$value": "#F59E0B",
+      "$type": "color",
+      "$description": "Warning state"
+    },
+    "status-warning-faint": {
+      "$value": "#1C1300",
+      "$type": "color",
+      "$description": "Warning tinted background"
+    },
+    "status-error": {
+      "$value": "#EF4444",
+      "$type": "color",
+      "$description": "Error/destructive state"
+    },
+    "status-error-faint": {
+      "$value": "#1C0000",
+      "$type": "color",
+      "$description": "Error tinted background"
+    },
+    "transparent": {
+      "$value": "transparent",
+      "$type": "color",
+      "$description": "Full transparency"
+    }
+  }
+}

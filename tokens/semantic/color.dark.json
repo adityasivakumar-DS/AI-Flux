@@ -1,0 +1,262 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["semantic/color.dark"],
+    "brand": "AI Flux 2.0",
+    "mode": "dark",
+    "version": "1.0.0"
+  },
+  "color": {
+    "background": {
+      "canvas": {
+        "$value": "{color.flux-navy}",
+        "$type": "color",
+        "$description": "Outermost page background"
+      },
+      "primary": {
+        "$value": "{color.neutral-dark}",
+        "$type": "color",
+        "$description": "Primary surface — main content areas"
+      },
+      "secondary": {
+        "$value": "{color.neutral-slate}",
+        "$type": "color",
+        "$description": "Secondary surface — cards, panels"
+      },
+      "tertiary": {
+        "$value": "{color.neutral-gray}",
+        "$type": "color",
+        "$description": "Tertiary surface — hover states, subtle fills"
+      },
+      "elevated": {
+        "$value": "{color.neutral-slate}",
+        "$type": "color",
+        "$description": "Elevated content — dropdowns, modals"
+      },
+      "overlay": {
+        "$value": "rgba(13, 14, 26, 0.85)",
+        "$type": "color",
+        "$description": "Scrim overlay for modals"
+      },
+      "inverse": {
+        "$value": "{color.neutral-white}",
+        "$type": "color",
+        "$description": "Inverse surface — light-on-dark popups"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{color.neutral-white}",
+        "$type": "color",
+        "$description": "Default body text"
+      },
+      "secondary": {
+        "$value": "{color.neutral-off-white}",
+        "$type": "color",
+        "$description": "Secondary text — subtitles, descriptions"
+      },
+      "tertiary": {
+        "$value": "{color.neutral-light}",
+        "$type": "color",
+        "$description": "Tertiary text — supporting info"
+      },
+      "muted": {
+        "$value": "{color.neutral-cool-gray}",
+        "$type": "color",
+        "$description": "Muted text — placeholders, timestamps"
+      },
+      "inverse": {
+        "$value": "{color.neutral-dark}",
+        "$type": "color",
+        "$description": "Text on light backgrounds"
+      },
+      "accent": {
+        "$value": "{color.flux-purple-light}",
+        "$type": "color",
+        "$description": "Branded accent text — links on dark"
+      },
+      "link": {
+        "$value": "{color.flux-cyan}",
+        "$type": "color",
+        "$description": "Hyperlinks"
+      },
+      "link-hover": {
+        "$value": "{color.flux-cyan-dark}",
+        "$type": "color"
+      },
+      "success": {
+        "$value": "{color.flux-green}",
+        "$type": "color"
+      },
+      "warning": {
+        "$value": "{color.status-warning}",
+        "$type": "color"
+      },
+      "error": {
+        "$value": "{color.status-error}",
+        "$type": "color"
+      },
+      "info": {
+        "$value": "{color.flux-cyan}",
+        "$type": "color"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.neutral-slate}",
+        "$type": "color",
+        "$description": "Default border"
+      },
+      "subtle": {
+        "$value": "rgba(255, 255, 255, 0.06)",
+        "$type": "color",
+        "$description": "Very subtle border — glass panels"
+      },
+      "strong": {
+        "$value": "{color.neutral-gray}",
+        "$type": "color",
+        "$description": "Prominent border"
+      },
+      "focus": {
+        "$value": "{color.flux-cyan}",
+        "$type": "color",
+        "$description": "Keyboard focus ring"
+      },
+      "accent": {
+        "$value": "{color.flux-purple}",
+        "$type": "color",
+        "$description": "Accent border — selected states"
+      },
+      "error": {
+        "$value": "{color.status-error}",
+        "$type": "color"
+      },
+      "success": {
+        "$value": "{color.flux-green}",
+        "$type": "color"
+      }
+    },
+    "interactive": {
+      "primary-bg": {
+        "$value": "{color.flux-purple}",
+        "$type": "color",
+        "$description": "Primary CTA background"
+      },
+      "primary-bg-hover": {
+        "$value": "{color.flux-purple-dark}",
+        "$type": "color"
+      },
+      "primary-bg-active": {
+        "$value": "{color.flux-purple-darker}",
+        "$type": "color"
+      },
+      "primary-text": {
+        "$value": "{color.neutral-white}",
+        "$type": "color"
+      },
+      "secondary-bg": {
+        "$value": "transparent",
+        "$type": "color"
+      },
+      "secondary-bg-hover": {
+        "$value": "{color.flux-purple-faint}",
+        "$type": "color"
+      },
+      "secondary-border": {
+        "$value": "{color.flux-purple}",
+        "$type": "color"
+      },
+      "secondary-text": {
+        "$value": "{color.flux-purple-light}",
+        "$type": "color"
+      },
+      "ghost-bg-hover": {
+        "$value": "rgba(255, 255, 255, 0.05)",
+        "$type": "color"
+      },
+      "ghost-text": {
+        "$value": "{color.neutral-off-white}",
+        "$type": "color"
+      },
+      "disabled-bg": {
+        "$value": "{color.neutral-gray}",
+        "$type": "color"
+      },
+      "disabled-text": {
+        "$value": "{color.neutral-cool-gray}",
+        "$type": "color"
+      },
+      "disabled-border": {
+        "$value": "{color.neutral-gray}",
+        "$type": "color"
+      }
+    },
+    "status": {
+      "success-bg": {
+        "$value": "{color.flux-green-faint}",
+        "$type": "color"
+      },
+      "success-text": {
+        "$value": "{color.flux-green}",
+        "$type": "color"
+      },
+      "success-border": {
+        "$value": "{color.flux-green}",
+        "$type": "color"
+      },
+      "warning-bg": {
+        "$value": "{color.status-warning-faint}",
+        "$type": "color"
+      },
+      "warning-text": {
+        "$value": "{color.status-warning}",
+        "$type": "color"
+      },
+      "warning-border": {
+        "$value": "{color.status-warning}",
+        "$type": "color"
+      },
+      "error-bg": {
+        "$value": "{color.status-error-faint}",
+        "$type": "color"
+      },
+      "error-text": {
+        "$value": "{color.status-error}",
+        "$type": "color"
+      },
+      "error-border": {
+        "$value": "{color.status-error}",
+        "$type": "color"
+      },
+      "info-bg": {
+        "$value": "{color.flux-cyan-faint}",
+        "$type": "color"
+      },
+      "info-text": {
+        "$value": "{color.flux-cyan}",
+        "$type": "color"
+      },
+      "info-border": {
+        "$value": "{color.flux-cyan}",
+        "$type": "color"
+      }
+    },
+    "brand": {
+      "gradient-primary": {
+        "$value": "linear-gradient(135deg, {color.flux-purple} 0%, {color.flux-blue} 100%)",
+        "$type": "color",
+        "$description": "Primary brand gradient — CTAs, hero backgrounds"
+      },
+      "gradient-flow": {
+        "$value": "linear-gradient(90deg, {color.flux-purple} 0%, {color.flux-cyan} 100%)",
+        "$type": "color",
+        "$description": "Flow gradient — data visualisation, progress"
+      },
+      "gradient-dark": {
+        "$value": "linear-gradient(180deg, {color.flux-navy} 0%, {color.neutral-dark} 100%)",
+        "$type": "color",
+        "$description": "Dark gradient — page backgrounds"
+      }
+    }
+  }
+}

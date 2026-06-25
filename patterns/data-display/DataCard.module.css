@@ -1,0 +1,80 @@
+/* AI Flux 2.0 — Data Card Pattern */
+
+.card {
+  min-width: 200px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-3);
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: var(--font-letter-spacing-wider);
+}
+
+.icon {
+  display: inline-flex;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.valueRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+}
+
+.value {
+  line-height: 1 !important;
+  font-feature-settings: 'tnum';
+}
+
+.unit {
+  line-height: 1;
+}
+
+.trend {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* Loading skeleton */
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeletonTitle,
+.skeletonValue {
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--color-background-tertiary) 25%,
+    var(--color-border-default) 50%,
+    var(--color-background-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonTitle {
+  height: 12px;
+  width: 60%;
+}
+
+.skeletonValue {
+  height: 40px;
+  width: 80%;
+}

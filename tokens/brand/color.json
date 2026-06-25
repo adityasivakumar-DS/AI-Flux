@@ -1,0 +1,67 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["brand/color"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0",
+    "notes": "Brand-level color aliases. These reference core tokens and define AI Flux's specific brand expression. Override these to create sub-brands."
+  },
+  "brand": {
+    "name": "AI Flux 2.0",
+    "tagline": "Flowing Intelligence. Endless Possibilities.",
+    "color": {
+      "identity": {
+        "$value": "{color.flux-purple}",
+        "$type": "color",
+        "$description": "The core brand identity colour"
+      },
+      "energy": {
+        "$value": "{color.flux-cyan}",
+        "$type": "color",
+        "$description": "Brand energy / motion colour"
+      },
+      "trust": {
+        "$value": "{color.flux-blue}",
+        "$type": "color",
+        "$description": "Brand trust / reliability colour"
+      },
+      "growth": {
+        "$value": "{color.flux-green}",
+        "$type": "color",
+        "$description": "Brand growth / success colour"
+      },
+      "depth": {
+        "$value": "{color.flux-navy}",
+        "$type": "color",
+        "$description": "Brand depth / space colour"
+      }
+    },
+    "gradient": {
+      "hero": {
+        "$value": "linear-gradient(135deg, #7C3AED 0%, #2563EB 50%, #00E5FF 100%)",
+        "$type": "color",
+        "$description": "Full brand gradient — hero sections, splash screens"
+      },
+      "cta": {
+        "$value": "linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)",
+        "$type": "color",
+        "$description": "CTA gradient — primary buttons, key actions"
+      },
+      "flow": {
+        "$value": "linear-gradient(90deg, #7C3AED 0%, #00E5FF 100%)",
+        "$type": "color",
+        "$description": "Flow gradient — data streams, progress indicators"
+      },
+      "success": {
+        "$value": "linear-gradient(135deg, #2563EB 0%, #00C896 100%)",
+        "$type": "color",
+        "$description": "Success gradient — completion states"
+      },
+      "dark-mesh": {
+        "$value": "radial-gradient(ellipse at 20% 50%, rgba(124,58,237,0.15) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(0,229,255,0.1) 0%, transparent 60%), #0D0E1A",
+        "$type": "color",
+        "$description": "Dark mesh background — page hero backgrounds"
+      }
+    }
+  }
+}

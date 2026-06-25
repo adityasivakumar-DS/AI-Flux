@@ -1,0 +1,19 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["core/z-index"],
+    "brand": "AI Flux 2.0",
+    "version": "1.0.0"
+  },
+  "z-index": {
+    "base": { "$value": 0, "$type": "number" },
+    "raised": { "$value": 10, "$type": "number", "$description": "Slightly elevated content" },
+    "dropdown": { "$value": 100, "$type": "number", "$description": "Dropdowns, menus" },
+    "sticky": { "$value": 200, "$type": "number", "$description": "Sticky headers" },
+    "overlay": { "$value": 300, "$type": "number", "$description": "Overlay backgrounds" },
+    "modal": { "$value": 400, "$type": "number", "$description": "Modals, dialogs" },
+    "popover": { "$value": 500, "$type": "number", "$description": "Popovers, tooltips" },
+    "toast": { "$value": 600, "$type": "number", "$description": "Toast notifications" },
+    "max": { "$value": 9999, "$type": "number", "$description": "Maximum — emergency layer" }
+  }
+}
