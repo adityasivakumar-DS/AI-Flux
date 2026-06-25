@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "brand": "AI-Flux",
+    "version": "1.0.0",
+    "description": "AI-Flux brand color palette — primitive color values that seed all token layers"
+  },
+  "palette": {
+    "flux-navy":        { "value": "#0D0E1A", "description": "Deepest brand background — space, depth, intelligence" },
+    "flux-purple":      { "value": "#7C3AED", "description": "Primary accent — AI, creativity, intelligence" },
+    "flux-purple-dark": { "value": "#6D28D9", "description": "Purple hover state" },
+    "flux-purple-darker":{ "value": "#5B21B6","description": "Purple active/pressed state" },
+    "flux-purple-light":{ "value": "#A78BFA", "description": "Purple on dark surfaces, subtle" },
+    "flux-purple-faint":{ "value": "#1E1033", "description": "Purple tinted background" },
+    "flux-blue":        { "value": "#2563EB", "description": "Secondary accent — trust, reliability" },
+    "flux-blue-dark":   { "value": "#1D4ED8", "description": "Blue hover state" },
+    "flux-blue-light":  { "value": "#60A5FA", "description": "Blue on dark surfaces" },
+    "flux-blue-faint":  { "value": "#0F1E3D", "description": "Blue tinted background" },
+    "flux-cyan":        { "value": "#00E5FF", "description": "Tertiary accent — motion, flow, data streams" },
+    "flux-cyan-dark":   { "value": "#00B8D9", "description": "Cyan hover state" },
+    "flux-cyan-faint":  { "value": "#001E2E", "description": "Cyan tinted background" },
+    "flux-green":       { "value": "#00C896", "description": "Success, positive outcomes, progress" },
+    "flux-green-dark":  { "value": "#00A87E", "description": "Green hover state" },
+    "flux-green-faint": { "value": "#001E17", "description": "Green tinted background" },
+    "neutral-dark":     { "value": "#0F172A", "description": "Near-black background" },
+    "neutral-slate":    { "value": "#1E293B", "description": "Card backgrounds, elevated surfaces" },
+    "neutral-gray":     { "value": "#334155", "description": "Borders, dividers" },
+    "neutral-cool-gray":{ "value": "#64748B", "description": "Muted text, placeholders" },
+    "neutral-light":    { "value": "#E2EBF0", "description": "Light mode backgrounds" },
+    "neutral-off-white":{ "value": "#F8FAFC", "description": "Light mode surfaces" },
+    "neutral-white":    { "value": "#FFFFFF", "description": "Pure white" },
+    "status-warning":   { "value": "#F59E0B", "description": "Warning state" },
+    "status-error":     { "value": "#EF4444", "description": "Error / destructive state" }
+  },
+  "gradients": {
+    "hero":      "linear-gradient(135deg, #7C3AED 0%, #2563EB 50%, #00E5FF 100%)",
+    "cta":       "linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)",
+    "flow":      "linear-gradient(90deg, #7C3AED 0%, #00E5FF 100%)",
+    "success":   "linear-gradient(135deg, #2563EB 0%, #00C896 100%)",
+    "dark-mesh": "radial-gradient(ellipse at 20% 50%, rgba(124,58,237,0.15) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(0,229,255,0.1) 0%, transparent 60%), #0D0E1A"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["brand/color", "brand/typography"],
+    "brand": "AI-Flux",
+    "version": "1.0.0",
+    "description": "Consolidated W3C DTCG brand tokens — AI-Flux specific expression layer. Override these values to create sub-brands without touching primitives or semantics."
+  },
+  "brand": {
+    "name": "AI-Flux",
+    "tagline": "Flowing Intelligence. Endless Possibilities.",
+    "color": {
+      "identity": { "$value": "{color.flux-purple}",  "$type": "color", "$description": "Core brand identity colour" },
+      "energy":   { "$value": "{color.flux-cyan}",    "$type": "color", "$description": "Brand energy / motion colour" },
+      "trust":    { "$value": "{color.flux-blue}",    "$type": "color", "$description": "Brand trust / reliability colour" },
+      "growth":   { "$value": "{color.flux-green}",   "$type": "color", "$description": "Brand growth / success colour" },
+      "depth":    { "$value": "{color.flux-navy}",    "$type": "color", "$description": "Brand depth / space colour" }
+    },
+    "gradient": {
+      "hero":      { "$value": "linear-gradient(135deg, #7C3AED 0%, #2563EB 50%, #00E5FF 100%)", "$type": "color", "$description": "Full brand gradient — hero sections" },
+      "cta":       { "$value": "linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)",             "$type": "color", "$description": "CTA gradient — primary buttons" },
+      "flow":      { "$value": "linear-gradient(90deg, #7C3AED 0%, #00E5FF 100%)",              "$type": "color", "$description": "Flow gradient — data streams, progress" },
+      "success":   { "$value": "linear-gradient(135deg, #2563EB 0%, #00C896 100%)",             "$type": "color", "$description": "Success gradient — completion states" },
+      "dark-mesh": { "$value": "radial-gradient(ellipse at 20% 50%, rgba(124,58,237,0.15) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(0,229,255,0.1) 0%, transparent 60%), #0D0E1A", "$type": "color", "$description": "Dark mesh page background" }
+    },
+    "typography": {
+      "wordmark": {
+        "font-family":   { "$value": "{font.family.primary}", "$type": "fontFamily" },
+        "font-weight":   { "$value": "{font.weight.bold}",    "$type": "fontWeight" },
+        "letter-spacing":{ "$value": "0.08em",                "$type": "dimension"  }
+      },
+      "tagline": {
+        "font-family":   { "$value": "{font.family.primary}",  "$type": "fontFamily" },
+        "font-weight":   { "$value": "{font.weight.regular}",  "$type": "fontWeight" },
+        "letter-spacing":{ "$value": "0.02em",                 "$type": "dimension"  }
+      }
+    }
+  }
+}
