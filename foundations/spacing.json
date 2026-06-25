@@ -1,0 +1,71 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "brand": "AI-Flux",
+    "version": "1.0.0",
+    "description": "AI-Flux spatial foundations — spacing, radius, elevation, border, motion, grid"
+  },
+  "spacing": {
+    "base": "4px",
+    "scale": {
+      "0":    "0px",    "px":   "1px",    "0.5":  "2px",
+      "1":    "4px",    "1.5":  "6px",    "2":    "8px",
+      "2.5":  "10px",   "3":    "12px",   "3.5":  "14px",
+      "4":    "16px",   "5":    "20px",   "6":    "24px",
+      "7":    "28px",   "8":    "32px",   "9":    "36px",
+      "10":   "40px",   "11":   "44px",   "12":   "48px",
+      "14":   "56px",   "16":   "64px",   "20":   "80px",
+      "24":   "96px",   "28":   "112px",  "32":   "128px",
+      "36":   "144px",  "40":   "160px",  "48":   "192px",
+      "56":   "224px",  "64":   "256px"
+    }
+  },
+  "radius": {
+    "none": "0px",
+    "xs":   "2px",
+    "sm":   "4px",
+    "md":   "8px",
+    "lg":   "12px",
+    "xl":   "16px",
+    "2xl":  "24px",
+    "3xl":  "32px",
+    "full": "9999px"
+  },
+  "elevation": {
+    "0": "none",
+    "1": "0 1px 2px 0 rgba(13, 14, 26, 0.30)",
+    "2": "0 2px 8px 0 rgba(13, 14, 26, 0.40)",
+    "3": "0 4px 16px 0 rgba(13, 14, 26, 0.50)",
+    "4": "0 8px 32px 0 rgba(13, 14, 26, 0.60)",
+    "5": "0 16px 48px 0 rgba(13, 14, 26, 0.70)",
+    "6": "0 24px 64px 0 rgba(13, 14, 26, 0.80)"
+  },
+  "borderWidth": {
+    "0":  "0px",
+    "1":  "1px",
+    "2":  "2px",
+    "4":  "4px"
+  },
+  "motion": {
+    "duration": {
+      "instant":  "0ms",
+      "fast":     "100ms",
+      "normal":   "200ms",
+      "moderate": "300ms",
+      "slow":     "400ms",
+      "glacial":  "600ms"
+    },
+    "easing": {
+      "linear":      "linear",
+      "ease-in":     "cubic-bezier(0.4, 0, 1, 1)",
+      "ease-out":    "cubic-bezier(0, 0, 0.2, 1)",
+      "ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "spring":      "cubic-bezier(0.34, 1.56, 0.64, 1)"
+    }
+  },
+  "grid": {
+    "desktop": { "columns": 12, "gutter": "24px", "margin": "32px", "maxWidth": "1440px" },
+    "tablet":  { "columns": 8,  "gutter": "16px", "margin": "24px", "maxWidth": "768px"  },
+    "mobile":  { "columns": 4,  "gutter": "12px", "margin": "16px", "maxWidth": "375px"  }
+  }
+}

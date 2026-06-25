@@ -1,0 +1,383 @@
+/* ============================================================
+   AI-Flux Design System — Card Component
+   Brand: Intelligent · Precise · Futuristic
+   ============================================================ */
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+
+:root {
+  /* Palette */
+  --aif-color-surface-base: #0d0f14;
+  --aif-color-surface-raised: #141720;
+  --aif-color-surface-overlay: #1a1e2a;
+  --aif-color-surface-subtle: rgba(255, 255, 255, 0.03);
+
+  --aif-color-border-default: rgba(255, 255, 255, 0.08);
+  --aif-color-border-strong: rgba(255, 255, 255, 0.16);
+  --aif-color-border-accent: rgba(99, 179, 237, 0.5);
+
+  --aif-color-accent-primary: #63b3ed;
+  --aif-color-accent-glow: rgba(99, 179, 237, 0.15);
+  --aif-color-accent-dim: rgba(99, 179, 237, 0.08);
+
+  --aif-color-text-primary: rgba(255, 255, 255, 0.92);
+  --aif-color-text-secondary: rgba(255, 255, 255, 0.56);
+  --aif-color-text-disabled: rgba(255, 255, 255, 0.24);
+
+  /* Shadows */
+  --aif-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --aif-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --aif-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
+  --aif-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.7), 0 4px 8px rgba(0, 0, 0, 0.5);
+  --aif-shadow-glow: 0 0 0 1px var(--aif-color-border-accent), 0 4px 20px var(--aif-color-accent-glow);
+
+  /* Spacing */
+  --aif-space-1: 0.25rem;   /* 4px  */
+  --aif-space-2: 0.5rem;    /* 8px  */
+  --aif-space-3: 0.75rem;   /* 12px */
+  --aif-space-4: 1rem;      /* 16px */
+  --aif-space-5: 1.25rem;   /* 20px */
+  --aif-space-6: 1.5rem;    /* 24px */
+  --aif-space-8: 2rem;      /* 32px */
+
+  /* Size scale — header/body/footer padding per card size */
+  --aif-card-padding-sm: var(--aif-space-3) var(--aif-space-4);
+  --aif-card-padding-md: var(--aif-space-4) var(--aif-space-5);
+  --aif-card-padding-lg: var(--aif-space-6) var(--aif-space-8);
+
+  /* Radius scale */
+  --aif-radius-none: 0;
+  --aif-radius-sm: 0.25rem;
+  --aif-radius-md: 0.5rem;
+  --aif-radius-lg: 0.75rem;
+  --aif-radius-xl: 1rem;
+
+  /* Motion */
+  --aif-transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --aif-transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --aif-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Image defaults */
+  --aif-card-image-height: 200px;
+  --aif-card-image-width: 120px;
+}
+
+/* ─── Anchor wrapper (href mode) ───────────────────────────── */
+
+.aif-card__anchor {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: inherit;
+  outline: none;
+}
+
+.aif-card__anchor:focus-visible > .aif-card {
+  outline: 2px solid var(--aif-color-accent-primary);
+  outline-offset: 3px;
+}
+
+/* ─── Card Base ─────────────────────────────────────────────── */
+
+.aif-card {
+  --_card-padding: var(--aif-card-padding-md);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: var(--aif-color-text-primary);
+  background: var(--aif-color-surface-raised);
+  border: 1px solid transparent;
+  transition:
+    box-shadow var(--aif-transition-base),
+    border-color var(--aif-transition-base),
+    transform var(--aif-transition-base),
+    background-color var(--aif-transition-base);
+  isolation: isolate;
+}
+
+/* Subtle scan-line texture — futuristic micro-detail */
+.aif-card::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.012) 2px,
+    rgba(255, 255, 255, 0.012) 4px
+  );
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* Ensure content sits above pseudo-element */
+.aif-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Radius Modifiers ──────────────────────────────────────── */
+
+.aif-card--radius-none { border-radius: var(--aif-radius-none); }
+.aif-card--radius-sm   { border-radius: var(--aif-radius-sm); }
+.aif-card--radius-md   { border-radius: var(--aif-radius-md); }
+.aif-card--radius-lg   { border-radius: var(--aif-radius-lg); }
+.aif-card--radius-xl   { border-radius: var(--aif-radius-xl); }
+
+/* ─── Size Modifiers ────────────────────────────────────────── */
+
+.aif-card--size-sm { --_card-padding: var(--aif-card-padding-sm); font-size: 0.875rem; }
+.aif-card--size-md { --_card-padding: var(--aif-card-padding-md); font-size: 1rem; }
+.aif-card--size-lg { --_card-padding: var(--aif-card-padding-lg); font-size: 1.0625rem; }
+
+/* ─── Variant: default ──────────────────────────────────────── */
+
+.aif-card--default {
+  background: var(--aif-color-surface-raised);
+  border-color: var(--aif-color-border-default);
+  box-shadow: var(--aif-shadow-xs);
+}
+
+/* ─── Variant: outlined ─────────────────────────────────────── */
+
+.aif-card--outlined {
+  background: transparent;
+  border-color: var(--aif-color-border-strong);
+  box-shadow: none;
+}
+
+/* ─── Variant: elevated ─────────────────────────────────────── */
+
+.aif-card--elevated {
+  background: var(--aif-color-surface-overlay);
+  border-color: var(--aif-color-border-default);
+  box-shadow: var(--aif-shadow-md);
+}
+
+/* ─── Variant: ghost ────────────────────────────────────────── */
+
+.aif-card--ghost {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.aif-card--ghost::before {
+  display: none;
+}
+
+/* ─── Interactive States ────────────────────────────────────── */
+
+.aif-card--interactive {
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover */
+.aif-card--interactive:hover:not(.aif-card--disabled) {
+  transform: translateY(-2px);
+}
+
+.aif-card--interactive.aif-card--default:hover:not(.aif-card--disabled) {
+  border-color: var(--aif-color-border-accent);
+  box-shadow: var(--aif-shadow-glow);
+}
+
+.aif-card--interactive.aif-card--outlined:hover:not(.aif-card--disabled) {
+  border-color: var(--aif-color-accent-primary);
+  background: var(--aif-color-accent-dim);
+}
+
+.aif-card--interactive.aif-card--elevated:hover:not(.aif-card--disabled) {
+  border-color: var(--aif-color-border-accent);
+  box-shadow: var(--aif-shadow-lg), 0 0 24px var(--aif-color-accent-glow);
+}
+
+.aif-card--interactive.aif-card--ghost:hover:not(.aif-card--disabled) {
+  background: var(--aif-color-surface-subtle);
+  border-color: var(--aif-color-border-default);
+}
+
+/* Active / pressed */
+.aif-card--interactive:active:not(.aif-card--disabled) {
+  transform: translateY(0) scale(0.99);
+  transition-duration: 80ms;
+}
+
+/* Focus-visible */
+.aif-card--interactive:focus-visible:not(.aif-card--disabled) {
+  outline: 2px solid var(--aif-color-accent-primary);
+  outline-offset: 3px;
+}
+
+/* Disabled */
+.aif-card--disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ─── CardHeader ────────────────────────────────────────────── */
+
+.aif-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--aif-space-3);
+  padding: var(--_card-padding);
+}
+
+.aif-card__header-leading {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.aif-card__header-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--aif-space-1);
+}
+
+.aif-card__header-action {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* ─── CardBody ──────────────────────────────────────────────── */
+
+.aif-card__body {
+  flex: 1;
+  padding: var(--_card-padding);
+  color: var(--aif-color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Remove top padding when directly preceded by a header (avoids double spacing) */
+.aif-card__header + .aif-card__body {
+  padding-top: 0;
+}
+
+.aif-card__body--no-padding {
+  padding: 0;
+}
+
+/* ─── CardFooter ────────────────────────────────────────────── */
+
+.aif-card__footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--aif-space-2);
+  padding: var(--_card-padding);
+}
+
+.aif-card__footer--align-start   { justify-content: flex-start; }
+.aif-card__footer--align-center  { justify-content: center; }
+.aif-card__footer--align-end     { justify-content: flex-end; }
+.aif-card__footer--align-spread  { justify-content: space-between; }
+
+.aif-card__footer--divider {
+  border-top: 1px solid var(--aif-color-border-default);
+  margin-top: auto;
+}
+
+/* ─── CardImage ─────────────────────────────────────────────── */
+
+.aif-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Position: top */
+.aif-card__image-wrapper--top {
+  width: 100%;
+  height: var(--aif-card-image-height);
+  order: -1;
+}
+
+/* Position: bottom */
+.aif-card__image-wrapper--bottom {
+  width: 100%;
+  height: var(--aif-card-image-height);
+  order: 99;
+}
+
+/* Position: left */
+.aif-card__image-wrapper--left {
+  width: var(--aif-card-image-width);
+  height: 100%;
+  align-self: stretch;
+  order: -1;
+}
+
+/* Card with side image needs to be row-direction */
+.aif-card:has(.aif-card__image-wrapper--left),
+.aif-card:has(.aif-card__image-wrapper--right) {
+  flex-direction: row;
+}
+
+/* Position: right */
+.aif-card__image-wrapper--right {
+  width: var(--aif-card-image-width);
+  height: 100%;
+  align-self: stretch;
+  order: 99;
+}
+
+/* Image element */
+.aif-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--aif-transition-slow);
+}
+
+.aif-card__image--fit-cover   { object-fit: cover; }
+.aif-card__image--fit-contain { object-fit: contain; }
+.aif-card__image--fit-fill    { object-fit: fill; }
+.aif-card__image--fit-none    { object-fit: none; }
+
+/* Zoom image on interactive card hover */
+.aif-card--interactive:hover:not(.aif-card--disabled) .aif-card__image {
+  transform: scale(1.04);
+}
+
+/* Overlay gradient */
+.aif-card__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(13, 15, 20, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* ─── Reduced motion ────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .aif-card,
+  .aif-card__image {
+    transition: none;
+  }
+
+  .aif-card--interactive:hover:not(.aif-card--disabled) {
+    transform: none;
+  }
+
+  .aif-card--interactive:active:not(.aif-card--disabled) {
+    transform: none;
+  }
+}

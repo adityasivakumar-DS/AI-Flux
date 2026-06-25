@@ -1,0 +1,272 @@
+{
+  "$description": "AI-Flux component-level design tokens",
+  "button": {
+    "$description": "Button component tokens",
+    "primary": {
+      "background": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.interactive.primary.background}",
+          "$description": "Primary button background"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.interactive.primary.background-hover}",
+          "$description": "Primary button background on hover"
+        },
+        "active": {
+          "$type": "color",
+          "$value": "{color.interactive.primary.background-active}",
+          "$description": "Primary button background when pressed"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{color.slate.200}",
+          "$description": "Primary button background when disabled"
+        }
+      },
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.interactive.primary.text}",
+          "$description": "Primary button text color"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{color.text.disabled}",
+          "$description": "Primary button text when disabled"
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "transparent",
+          "$description": "Primary button border (transparent)"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "{color.focus.ring}",
+          "$description": "Primary button focus border"
+        }
+      }
+    },
+    "secondary": {
+      "background": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.interactive.secondary.background}",
+          "$description": "Secondary button background"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.interactive.secondary.background-hover}",
+          "$description": "Secondary button background on hover"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{color.slate.100}",
+          "$description": "Secondary button background when disabled"
+        }
+      },
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.interactive.secondary.text}",
+          "$description": "Secondary button text color"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{color.text.disabled}",
+          "$description": "Secondary button text when disabled"
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.indigo.200}",
+          "$description": "Secondary button border"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.indigo.300}",
+          "$description": "Secondary button border on hover"
+        }
+      }
+    },
+    "ghost": {
+      "background": {
+        "default": {
+          "$type": "color",
+          "$value": "transparent",
+          "$description": "Ghost button background"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.interactive.ghost.background-hover}",
+          "$description": "Ghost button background on hover"
+        }
+      },
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.interactive.ghost.text}",
+          "$description": "Ghost button text color"
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "transparent",
+          "$description": "Ghost button border"
+        }
+      }
+    },
+    "destructive": {
+      "background": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.interactive.destructive.background}",
+          "$description": "Destructive button background"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.interactive.destructive.background-hover}",
+          "$description": "Destructive button background on hover"
+        }
+      },
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.interactive.destructive.text}",
+          "$description": "Destructive button text"
+        }
+      }
+    },
+    "size": {
+      "sm": {
+        "paddingX": {
+          "$type": "dimension",
+          "$value": "{spacing.3}",
+          "$description": "Small button horizontal padding"
+        },
+        "paddingY": {
+          "$type": "dimension",
+          "$value": "{spacing.1}",
+          "$description": "Small button vertical padding"
+        },
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{typography.fontSize.sm}",
+          "$description": "Small button font size"
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "32px",
+          "$description": "Small button height"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{borderRadius.md}",
+          "$description": "Small button border radius"
+        }
+      },
+      "md": {
+        "paddingX": {
+          "$type": "dimension",
+          "$value": "{spacing.4}",
+          "$description": "Medium button horizontal padding"
+        },
+        "paddingY": {
+          "$type": "dimension",
+          "$value": "{spacing.2}",
+          "$description": "Medium button vertical padding"
+        },
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{typography.fontSize.base}",
+          "$description": "Medium button font size"
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "40px",
+          "$description": "Medium button height"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{borderRadius.lg}",
+          "$description": "Medium button border radius"
+        }
+      },
+      "lg": {
+        "paddingX": {
+          "$type": "dimension",
+          "$value": "{spacing.6}",
+          "$description": "Large button horizontal padding"
+        },
+        "paddingY": {
+          "$type": "dimension",
+          "$value": "{spacing.3}",
+          "$description": "Large button vertical padding"
+        },
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{typography.fontSize.md}",
+          "$description": "Large button font size"
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "48px",
+          "$description": "Large button height"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{borderRadius.lg}",
+          "$description": "Large button border radius"
+        }
+      }
+    },
+    "fontWeight": {
+      "$type": "number",
+      "$value": "{typography.fontWeight.medium}",
+      "$description": "Button font weight"
+    },
+    "transition": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{motion.duration.fast}",
+        "$description": "Button state transition duration"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{motion.easing.snappy}",
+        "$description": "Button transition easing"
+      }
+    },
+    "focusRingWidth": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$description": "Button focus ring width"
+    },
+    "focusRingOffset": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$description": "Button focus ring offset"
+    }
+  },
+  "input": {
+    "$description": "Input/form field component tokens",
+    "background": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.surface.default}",
+        "$description": "Input background"
+      },
+      "hover": {
+        "$type": "color",
+        "$value": "{color.surface.raised}",
+        "$description": "Input background on hover"
+      },
+      "focus": {
+        "$type": "color",
+        "$value": "{color.surface.default}",
+        "$description": "Input backg

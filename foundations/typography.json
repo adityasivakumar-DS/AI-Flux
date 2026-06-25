@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "brand": "AI-Flux",
+    "version": "1.0.0",
+    "description": "AI-Flux typography foundations — typefaces, scale, weights, line-heights, letter-spacing"
+  },
+  "fontFamilies": {
+    "primary":   "'Space Grotesk', sans-serif",
+    "secondary": "'Inter', sans-serif",
+    "mono":      "'JetBrains Mono', 'Fira Code', monospace"
+  },
+  "fontWeights": {
+    "regular":  400,
+    "medium":   500,
+    "semibold": 600,
+    "bold":     700
+  },
+  "typeScale": {
+    "display-1":   { "size": "48px", "lineHeight": "56px", "tracking": "-0.02em", "weight": 700 },
+    "display-2":   { "size": "36px", "lineHeight": "44px", "tracking": "-0.02em", "weight": 700 },
+    "heading-1":   { "size": "28px", "lineHeight": "36px", "tracking": "0em",     "weight": 700 },
+    "heading-2":   { "size": "22px", "lineHeight": "30px", "tracking": "0em",     "weight": 600 },
+    "heading-3":   { "size": "18px", "lineHeight": "26px", "tracking": "0em",     "weight": 600 },
+    "body-large":  { "size": "16px", "lineHeight": "24px", "tracking": "0em",     "weight": 400 },
+    "body":        { "size": "14px", "lineHeight": "22px", "tracking": "0em",     "weight": 400 },
+    "small":       { "size": "12px", "lineHeight": "16px", "tracking": "0.05em",  "weight": 400 },
+    "caption":     { "size": "10px", "lineHeight": "14px", "tracking": "0.05em",  "weight": 400 }
+  },
+  "letterSpacing": {
+    "tight":  "-0.02em",
+    "normal": "0em",
+    "wide":   "0.05em",
+    "wider":  "0.1em"
+  },
+  "semanticStyles": {
+    "wordmark": { "family": "primary", "weight": "bold",     "tracking": "0.08em" },
+    "tagline":  { "family": "primary", "weight": "regular",  "tracking": "0.02em" },
+    "label":    { "family": "primary", "weight": "medium",   "tracking": "0.05em", "size": "12px" },
+    "code":     { "family": "mono",    "weight": "regular",  "tracking": "0em",    "size": "13px" }
+  }
+}

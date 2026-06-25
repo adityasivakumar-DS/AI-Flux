@@ -1,0 +1,458 @@
+/* ============================================================
+   AI-Flux Design System — Table Component
+   Brand: Intelligent · Precise · Futuristic
+   ============================================================ */
+
+/* ─── Design Tokens (scoped — inherits from :root when available) ─ */
+
+.aif-table-wrapper {
+  --aif-color-surface-base:      #0d0f14;
+  --aif-color-surface-raised:    #141720;
+  --aif-color-surface-overlay:   #1a1e2a;
+  --aif-color-surface-subtle:    rgba(255, 255, 255, 0.03);
+  --aif-color-surface-hover:     rgba(255, 255, 255, 0.05);
+  --aif-color-surface-selected:  rgba(99, 179, 237, 0.08);
+  --aif-color-surface-stripe:    rgba(255, 255, 255, 0.025);
+
+  --aif-color-border-default:    rgba(255, 255, 255, 0.08);
+  --aif-color-border-strong:     rgba(255, 255, 255, 0.16);
+  --aif-color-border-accent:     rgba(99, 179, 237, 0.5);
+  --aif-color-border-cell:       rgba(255, 255, 255, 0.06);
+
+  --aif-color-accent-primary:    #63b3ed;
+  --aif-color-accent-glow:       rgba(99, 179, 237, 0.15);
+  --aif-color-accent-dim:        rgba(99, 179, 237, 0.08);
+
+  --aif-color-text-primary:      rgba(255, 255, 255, 0.92);
+  --aif-color-text-secondary:    rgba(255, 255, 255, 0.56);
+  --aif-color-text-disabled:     rgba(255, 255, 255, 0.24);
+  --aif-color-text-header:       rgba(255, 255, 255, 0.70);
+
+  --aif-color-checkbox-bg:       #0d0f14;
+  --aif-color-checkbox-checked:  #63b3ed;
+  --aif-color-checkbox-border:   rgba(255, 255, 255, 0.32);
+  --aif-color-focus-ring:        rgba(99, 179, 237, 0.6);
+
+  --aif-shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.4);
+  --aif-shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --aif-shadow-md:  0 4px 16px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
+
+  --aif-radius-sm:  0.25rem;
+  --aif-radius-md:  0.5rem;
+  --aif-radius-lg:  0.75rem;
+
+  --aif-transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --aif-transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Size scale — cell padding */
+  --aif-table-cell-px-sm: 0.625rem;
+  --aif-table-cell-py-sm: 0.5rem;
+  --aif-table-cell-px-md: 1rem;
+  --aif-table-cell-py-md: 0.75rem;
+  --aif-table-cell-px-lg: 1.25rem;
+  --aif-table-cell-py-lg: 1rem;
+
+  --aif-table-font-sm:    0.8125rem;
+  --aif-table-font-md:    0.875rem;
+  --aif-table-font-lg:    1rem;
+
+  --aif-table-header-font-sm: 0.6875rem;
+  --aif-table-header-font-md: 0.75rem;
+  --aif-table-header-font-lg: 0.8125rem;
+}
+
+/* ─── Wrapper ────────────────────────────────────────────────── */
+
+.aif-table-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  background: var(--aif-color-surface-raised);
+  border-radius: var(--aif-radius-md);
+  border: 1px solid var(--aif-color-border-default);
+  box-shadow: var(--aif-shadow-xs);
+  /* Subtle scan-line texture for futuristic feel */
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.008) 2px,
+    rgba(255, 255, 255, 0.008) 4px
+  );
+}
+
+/* Sticky header: constrain scroll to wrapper height */
+.aif-table-wrapper--sticky {
+  overflow-y: auto;
+}
+
+/* ─── Table Element ──────────────────────────────────────────── */
+
+.aif-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: auto;
+  color: var(--aif-color-text-primary);
+  font-size: var(--aif-table-font-md);
+  line-height: 1.5;
+}
+
+/* ─── Size Modifiers ─────────────────────────────────────────── */
+
+.aif-table--sm {
+  font-size: var(--aif-table-font-sm);
+}
+
+.aif-table--md {
+  font-size: var(--aif-table-font-md);
+}
+
+.aif-table--lg {
+  font-size: var(--aif-table-font-lg);
+}
+
+/* ─── Table Head ─────────────────────────────────────────────── */
+
+.aif-table__thead {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sticky header */
+.aif-table--sticky-header .aif-table__thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.aif-table__thead .aif-table__th {
+  background: var(--aif-color-surface-overlay);
+}
+
+/* Ensure sticky cells render above body rows */
+.aif-table--sticky-header .aif-table__thead .aif-table__th {
+  background: var(--aif-color-surface-overlay);
+  box-shadow: 0 1px 0 var(--aif-color-border-strong);
+}
+
+/* ─── Header Cell ────────────────────────────────────────────── */
+
+.aif-table__th {
+  padding: var(--aif-table-cell-py-md) var(--aif-table-cell-px-md);
+  text-align: left;
+  font-size: var(--aif-table-header-font-md);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--aif-color-text-header);
+  white-space: nowrap;
+  user-select: none;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--aif-color-border-strong);
+  transition: color var(--aif-transition-fast), background-color var(--aif-transition-fast);
+}
+
+.aif-table--sm .aif-table__th {
+  padding: var(--aif-table-cell-py-sm) var(--aif-table-cell-px-sm);
+  font-size: var(--aif-table-header-font-sm);
+}
+
+.aif-table--lg .aif-table__th {
+  padding: var(--aif-table-cell-py-lg) var(--aif-table-cell-px-lg);
+  font-size: var(--aif-table-header-font-lg);
+}
+
+/* ─── Sortable Header ────────────────────────────────────────── */
+
+.aif-table__th--sortable {
+  cursor: pointer;
+}
+
+.aif-table__th--sortable:hover {
+  color: var(--aif-color-text-primary);
+  background-color: var(--aif-color-surface-hover);
+}
+
+.aif-table__th--sortable:focus-visible {
+  outline: 2px solid var(--aif-color-focus-ring);
+  outline-offset: -2px;
+}
+
+.aif-table__th--sorted-asc,
+.aif-table__th--sorted-desc {
+  color: var(--aif-color-accent-primary);
+}
+
+/* Header cell inner layout */
+.aif-table__th-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/* Sort icon */
+.aif-table__sort-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  opacity: 0.4;
+  transition: opacity var(--aif-transition-fast), color var(--aif-transition-fast), transform var(--aif-transition-fast);
+  color: currentColor;
+}
+
+.aif-table__th--sortable:hover .aif-table__sort-icon {
+  opacity: 0.8;
+}
+
+.aif-table__th--sorted-asc .aif-table__sort-icon,
+.aif-table__th--sorted-desc .aif-table__sort-icon {
+  opacity: 1;
+  color: var(--aif-color-accent-primary);
+}
+
+/* ─── Data Cell ──────────────────────────────────────────────── */
+
+.aif-table__td {
+  padding: var(--aif-table-cell-py-md) var(--aif-table-cell-px-md);
+  color: var(--aif-color-text-secondary);
+  vertical-align: middle;
+  transition: background-color var(--aif-transition-fast);
+}
+
+.aif-table--sm .aif-table__td {
+  padding: var(--aif-table-cell-py-sm) var(--aif-table-cell-px-sm);
+}
+
+.aif-table--lg .aif-table__td {
+  padding: var(--aif-table-cell-py-lg) var(--aif-table-cell-px-lg);
+}
+
+/* ─── Row States ─────────────────────────────────────────────── */
+
+.aif-table__row {
+  transition: background-color var(--aif-transition-fast);
+}
+
+.aif-table__row:hover .aif-table__td {
+  background-color: var(--aif-color-surface-hover);
+}
+
+.aif-table__row--selected .aif-table__td {
+  background-color: var(--aif-color-surface-selected);
+}
+
+.aif-table__row--selected:hover .aif-table__td {
+  background-color: rgba(99, 179, 237, 0.12);
+}
+
+/* ─── Variant: simple (default) ─────────────────────────────── */
+
+/* No extra borders — inherits header bottom border only */
+
+/* ─── Variant: striped ───────────────────────────────────────── */
+
+.aif-table--striped .aif-table__row:nth-child(even) .aif-table__td {
+  background-color: var(--aif-color-surface-stripe);
+}
+
+.aif-table--striped .aif-table__row:nth-child(even):hover .aif-table__td {
+  background-color: var(--aif-color-surface-hover);
+}
+
+.aif-table--striped .aif-table__row--selected .aif-table__td,
+.aif-table--striped .aif-table__row--selected:nth-child(even) .aif-table__td {
+  background-color: var(--aif-color-surface-selected);
+}
+
+/* ─── Variant: bordered ──────────────────────────────────────── */
+
+.aif-table--bordered .aif-table__td,
+.aif-table--bordered .aif-table__th {
+  border: 1px solid var(--aif-color-border-cell);
+}
+
+.aif-table--bordered .aif-table__th {
+  border-bottom-color: var(--aif-color-border-strong);
+}
+
+/* ─── Checkbox Column ────────────────────────────────────────── */
+
+.aif-table__th--checkbox,
+.aif-table__td--checkbox {
+  width: 2.5rem;
+  min-width: 2.5rem;
+  padding-right: 0;
+  text-align: center;
+}
+
+/* ─── Custom Checkbox ────────────────────────────────────────── */
+
+.aif-table__checkbox-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.aif-table__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid var(--aif-color-checkbox-border);
+  border-radius: var(--aif-radius-sm);
+  background: var(--aif-color-checkbox-bg);
+  cursor: pointer;
+  position: relative;
+  transition:
+    border-color var(--aif-transition-fast),
+    background-color var(--aif-transition-fast),
+    box-shadow var(--aif-transition-fast);
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.aif-table__checkbox:hover {
+  border-color: var(--aif-color-accent-primary);
+}
+
+.aif-table__checkbox:focus-visible {
+  outline: 2px solid var(--aif-color-focus-ring);
+  outline-offset: 2px;
+}
+
+.aif-table__checkbox:checked {
+  background: var(--aif-color-checkbox-checked);
+  border-color: var(--aif-color-checkbox-checked);
+  box-shadow: 0 0 0 3px var(--aif-color-accent-dim);
+}
+
+/* Checkmark via pseudo-element */
+.aif-table__checkbox:checked::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6l2.5 2.5 4.5-5' stroke='%230d0f14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+}
+
+/* Indeterminate state */
+.aif-table__checkbox:indeterminate {
+  background: var(--aif-color-surface-overlay);
+  border-color: var(--aif-color-accent-primary);
+}
+
+.aif-table__checkbox:indeterminate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3 6h6' stroke='%2363b3ed' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+}
+
+/* ─── Empty State ────────────────────────────────────────────── */
+
+.aif-table__empty {
+  text-align: center;
+  color: var(--aif-color-text-disabled);
+  font-size: 0.875rem;
+}
+
+.aif-table__empty-cell {
+  padding: 3rem 1rem;
+}
+
+/* ─── Loading Skeleton ───────────────────────────────────────── */
+
+.aif-table__skeleton-cell {
+  padding: var(--aif-table-cell-py-md) var(--aif-table-cell-px-md);
+  vertical-align: middle;
+}
+
+.aif-table--sm .aif-table__skeleton-cell {
+  padding: var(--aif-table-cell-py-sm) var(--aif-table-cell-px-sm);
+}
+
+.aif-table--lg .aif-table__skeleton-cell {
+  padding: var(--aif-table-cell-py-lg) var(--aif-table-cell-px-lg);
+}
+
+.aif-table__skeleton-bar {
+  height: 0.75rem;
+  border-radius: var(--aif-radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--aif-color-surface-overlay) 25%,
+    rgba(255, 255, 255, 0.06) 50%,
+    var(--aif-color-surface-overlay) 75%
+  );
+  background-size: 200% 100%;
+  animation: aif-table-shimmer 1.6s infinite linear;
+}
+
+@keyframes aif-table-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── Caption ────────────────────────────────────────────────── */
+
+.aif-table__caption {
+  caption-side: bottom;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  color: var(--aif-color-text-disabled);
+  text-align: left;
+}
+
+/* ─── Pagination Slot ────────────────────────────────────────── */
+
+.aif-table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--aif-color-border-default);
+  background: var(--aif-color-surface-overlay);
+  border-radius: 0 0 var(--aif-radius-md) var(--aif-radius-md);
+  font-size: 0.8125rem;
+  color: var(--aif-color-text-secondary);
+}
+
+.aif-table-pagination__info {
+  flex-shrink: 0;
+}
+
+.aif-table-pagination__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ─── Reduced Motion ─────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .aif-table__row,
+  .aif-table__td,
+  .aif-table__th,
+  .aif-table__checkbox,
+  .aif-table__sort-icon {
+    transition: none;
+  }
+
+  .aif-table__skeleton-bar {
+    animation: none;
+    background: var(--aif-color-surface-overlay);
+  }
+}

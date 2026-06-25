@@ -1,0 +1,107 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$metadata": {
+    "tokenSetOrder": ["semantic/color.light", "semantic/color.dark", "semantic/spacing", "semantic/typography"],
+    "brand": "AI-Flux",
+    "version": "1.0.0",
+    "description": "Consolidated W3C DTCG semantic tokens — meaningful aliases referencing primitives, split by mode"
+  },
+  "light": {
+    "color": {
+      "background": {
+        "canvas":   { "$value": "{color.neutral-off-white}", "$type": "color" },
+        "primary":  { "$value": "{color.neutral-white}",     "$type": "color" },
+        "secondary":{ "$value": "{color.neutral-off-white}", "$type": "color" },
+        "tertiary": { "$value": "{color.neutral-light}",     "$type": "color" },
+        "elevated": { "$value": "{color.neutral-white}",     "$type": "color" },
+        "overlay":  { "$value": "rgba(15, 23, 42, 0.6)",     "$type": "color" },
+        "inverse":  { "$value": "{color.neutral-dark}",      "$type": "color" }
+      },
+      "text": {
+        "primary":   { "$value": "{color.neutral-dark}",      "$type": "color" },
+        "secondary": { "$value": "{color.neutral-slate}",     "$type": "color" },
+        "muted":     { "$value": "{color.neutral-cool-gray}", "$type": "color" },
+        "inverse":   { "$value": "{color.neutral-white}",     "$type": "color" },
+        "accent":    { "$value": "{color.flux-purple}",       "$type": "color" },
+        "link":      { "$value": "{color.flux-blue}",         "$type": "color" },
+        "success":   { "$value": "{color.flux-green-dark}",   "$type": "color" },
+        "warning":   { "$value": "#B45309",                   "$type": "color" },
+        "error":     { "$value": "#DC2626",                   "$type": "color" }
+      },
+      "border": {
+        "default": { "$value": "{color.neutral-light}",     "$type": "color" },
+        "strong":  { "$value": "{color.neutral-cool-gray}", "$type": "color" },
+        "focus":   { "$value": "{color.flux-purple}",       "$type": "color" },
+        "error":   { "$value": "#DC2626",                   "$type": "color" }
+      },
+      "interactive": {
+        "primary-bg":       { "$value": "{color.flux-purple}",       "$type": "color" },
+        "primary-bg-hover": { "$value": "{color.flux-purple-dark}",  "$type": "color" },
+        "primary-text":     { "$value": "{color.neutral-white}",     "$type": "color" },
+        "disabled-bg":      { "$value": "{color.neutral-light}",     "$type": "color" },
+        "disabled-text":    { "$value": "{color.neutral-cool-gray}", "$type": "color" }
+      },
+      "status": {
+        "success-bg":    { "$value": "#F0FDF4", "$type": "color" },
+        "success-text":  { "$value": "#166534", "$type": "color" },
+        "warning-bg":    { "$value": "#FFFBEB", "$type": "color" },
+        "warning-text":  { "$value": "#92400E", "$type": "color" },
+        "error-bg":      { "$value": "#FEF2F2", "$type": "color" },
+        "error-text":    { "$value": "#991B1B", "$type": "color" },
+        "info-bg":       { "$value": "#EFF6FF", "$type": "color" },
+        "info-text":     { "$value": "#1E40AF", "$type": "color" }
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "background": {
+        "canvas":   { "$value": "{color.flux-navy}",     "$type": "color" },
+        "primary":  { "$value": "{color.neutral-dark}",  "$type": "color" },
+        "secondary":{ "$value": "{color.neutral-slate}", "$type": "color" },
+        "tertiary": { "$value": "{color.neutral-gray}",  "$type": "color" },
+        "elevated": { "$value": "{color.neutral-slate}", "$type": "color" },
+        "overlay":  { "$value": "rgba(13, 14, 26, 0.85)","$type": "color" },
+        "inverse":  { "$value": "{color.neutral-white}", "$type": "color" }
+      },
+      "text": {
+        "primary":   { "$value": "{color.neutral-white}",     "$type": "color" },
+        "secondary": { "$value": "{color.neutral-off-white}", "$type": "color" },
+        "muted":     { "$value": "{color.neutral-cool-gray}", "$type": "color" },
+        "inverse":   { "$value": "{color.neutral-dark}",      "$type": "color" },
+        "accent":    { "$value": "{color.flux-purple-light}", "$type": "color" },
+        "link":      { "$value": "{color.flux-cyan}",         "$type": "color" },
+        "success":   { "$value": "{color.flux-green}",        "$type": "color" },
+        "warning":   { "$value": "{color.status-warning}",    "$type": "color" },
+        "error":     { "$value": "{color.status-error}",      "$type": "color" }
+      },
+      "border": {
+        "default": { "$value": "{color.neutral-slate}", "$type": "color" },
+        "strong":  { "$value": "{color.neutral-gray}",  "$type": "color" },
+        "focus":   { "$value": "{color.flux-cyan}",     "$type": "color" },
+        "error":   { "$value": "{color.status-error}",  "$type": "color" }
+      },
+      "interactive": {
+        "primary-bg":       { "$value": "{color.flux-purple}",       "$type": "color" },
+        "primary-bg-hover": { "$value": "{color.flux-purple-dark}",  "$type": "color" },
+        "primary-text":     { "$value": "{color.neutral-white}",     "$type": "color" },
+        "disabled-bg":      { "$value": "{color.neutral-gray}",      "$type": "color" },
+        "disabled-text":    { "$value": "{color.neutral-cool-gray}", "$type": "color" }
+      },
+      "status": {
+        "success-bg":    { "$value": "{color.flux-green-faint}",       "$type": "color" },
+        "success-text":  { "$value": "{color.flux-green}",             "$type": "color" },
+        "warning-bg":    { "$value": "{color.status-warning-faint}",   "$type": "color" },
+        "warning-text":  { "$value": "{color.status-warning}",         "$type": "color" },
+        "error-bg":      { "$value": "{color.status-error-faint}",     "$type": "color" },
+        "error-text":    { "$value": "{color.status-error}",           "$type": "color" },
+        "info-bg":       { "$value": "{color.flux-cyan-faint}",        "$type": "color" },
+        "info-text":     { "$value": "{color.flux-cyan}",              "$type": "color" }
+      },
+      "brand": {
+        "gradient-primary": { "$value": "linear-gradient(135deg, {color.flux-purple} 0%, {color.flux-blue} 100%)", "$type": "color" },
+        "gradient-flow":    { "$value": "linear-gradient(90deg, {color.flux-purple} 0%, {color.flux-cyan} 100%)",  "$type": "color" }
+      }
+    }
+  }
+}
